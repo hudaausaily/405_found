@@ -1,6 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
+
 
 const Navbar = () => {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleClick = event => {
+      // 👇️ toggle isActive state on click
+      setIsActive(current => !current);
+    };
+       
+       
     return (
         <div className="topbar stick">
             <div className="logo">
@@ -15,10 +24,10 @@ const Navbar = () => {
                    
                     <li><a href="newsfeed.html" title="Home" data-ripple><i className="ti-home" /></a></li>
                     <li>
-                    <a href="#" title="Notification" data-ripple>
+                    <a  title="Notification" data-ripple>
                         <i className="ti-bell" /><span>20</span>
                     </a>
-                    <div className="dropdowns">
+                    <div className={isActive ? 'ps-container ps-theme-default ps-active-y active' : 'dropdowns'} onClick={handleClick}>
                         <span>4 New Notifications</span>
                         <ul className="drops-menu">
                         <li>
@@ -72,7 +81,10 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+         
+  
          </div>
+         
     );
 }
 
