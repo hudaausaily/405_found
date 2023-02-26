@@ -3,7 +3,7 @@ import React from 'react';
 const Rightbar = () => {
     return (
         
-        <div className="col-lg-3">
+                         <div className="col-lg-3">
                               <aside className="sidebar static">
                                 <div className="widget">
                                   <h4 className="widget-title">Your page</h4>	
@@ -100,7 +100,7 @@ const Rightbar = () => {
                                 <div className="widget friend-list stick-widget">
                                   <h4 className="widget-title">Friends</h4>
                                   <div id="searchDir" />
-                                  <ul id="people-list" className="friendz-list">
+                                  <ul id="people-list" className="friendz-list" style={{overflowY:'scroll'}}>
                                     <li>
                                       <figure>
                                         <img src="images/resources/friend-avatar.jpg" alt="" />
