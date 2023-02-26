@@ -71,7 +71,6 @@ const Navbar = () => {
                     <a href="#" title><i className="ti-power-off" />log out</a>
                     </div>
                 </div>
-                <span className="ti-menu main-menu" data-ripple />
             </div>
          </div>
     );
