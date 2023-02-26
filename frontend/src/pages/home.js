@@ -1,14 +1,60 @@
-import React from 'react';
 import Rightbar from '../components/rightbar';
 import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
-import ResponsiveNav from '../components/responsivenav';
-import Nav from '../components/nav';
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 const Home = () => {
- 
+//  __________share post_________________
+      const current_ID = JSON.parse(localStorage.getItem('id'));
+      // const ImageUser = JSON.parse(localStorage.getItem('image'));
+      const [users,setUsers] = useState([]);
+      const [inputs , setInputs] = useState("")
+      const [posts , setPosts] = useState([]);
+      const [comments , setComments] = useState([]);
+      const [file, setFile] = useState(null);
+        useEffect(()=>{
+        getUsers();
+
+
+      },[]);
+
+        const getUsers = async () => {
+
+        await axios.get(`http://localhost:80/react_project/back_end/user.php/read/${current_ID}`)
+        .then((respone)=>{
+            setUsers(respone.data[0])
+          
+        })
+      }
+
+      // create post
+      const handleImagePost = async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData();
+
+      formData.append("post", inputs);
+      formData.append("user_id", current_ID);
+      formData.append("file", file);
+
+      try {
+        const response = await axios.post(
+          "http://localhost:80/projectReact7/back_end/posts.php", formData
+        );
+        console.log(response.data);
+        window.location.assign('/home');
+      } catch (error) {
+        console.error(error);
+      }
+      };
+
+      const handlePost = (e) => {
+      const value = e.target.value;
+      setInputs(value)
+      }
+//  _______end shere post________________
           return (
               <div className="theme-layout">
                 <Navbar/>
@@ -23,46 +69,42 @@ const Home = () => {
                               <div className="central-meta">
                                 <div className="new-postbox">
                                   <figure>
-                                    <img src="images/resources/admin2.jpg" alt="" />
+                                  <img className="shareProfileImg"  alt="" />
+                                  {/* src={ ImageUser ? require(`../image/${ImageUser}`) : require(`../image/icon.png`)} */}
                                   </figure>
                                   <div className="newpst-input">
-                                    <form method="post">
-                                      <textarea rows={2} placeholder="write something" defaultValue={""} />
+                                    {/* ____________share post_____________________ */}
+                                    <form onSubmit={handleImagePost}>
+                                      <textarea rows={2} placeholder="write something" defaultValue={""}   id={current_ID} onChange={handlePost}/>
                                       <div className="attachments">
                                         <ul>
-                                          <li>
-                                            <i className="fa fa-music" />
-                                            <label className="fileContainer">
-                                              <input type="file" />
-                                            </label>
-                                          </li>
+                                      
                                           <li>
                                             <i className="fa fa-image" />
                                             <label className="fileContainer">
-                                              <input type="file" />
+                                              <input type="file" onChange={(e) => setFile(e.target.files[0])} />
                                             </label>
                                           </li>
-                                          <li>
+                                          {/* <li>
                                             <i className="fa fa-video-camera" />
                                             <label className="fileContainer">
                                               <input type="file" />
                                             </label>
-                                          </li>
-                                          <li>
-                                            <i className="fa fa-camera" />
-                                            <label className="fileContainer">
-                                              <input type="file" />
-                                            </label>
-                                          </li>
+                                          </li> */}
+                                        
                                           <li>
                                             <button type="submit">Post</button>
                                           </li>
                                         </ul>
                                       </div>
                                     </form>
+                                      {/* ______________end share post________________ */}
                                   </div>
                                 </div>
-                              </div>{/* add post new box */}
+                              </div> 
+                            
+
+                              {/* add post new box */}
                               <div className="loadMore">
                               {/*POST*/}
                                 <div className="central-meta item">
@@ -222,6 +264,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+              
              
           );
         

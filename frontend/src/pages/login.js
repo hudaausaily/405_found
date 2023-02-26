@@ -1,6 +1,79 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-const Login = () => {
+export default class Login extends Component {
+  constructor(props){
+      super(props);
+      this.state={
+          email:"",
+          password:"",
+          users:[],
+      }
+      this.users =this.props.users
+      console.log( this.users);
+  }
+
+  componentDidMount = () =>{
+      axios.get("http://localhost:80/projectReact7/back_end/user.php")
+      .then((respone)=>{
+          this.setState({
+              users:respone.data
+          })
+          // setUsers(respone.data)
+          console.log(respone.data);
+      })
+  }
+  handleBlur = (event)=>{
+
+  const {name , value}=event.target;
+
+if(name==="email"){
+  this.setState({
+      email:value,
+  })
+  
+}else if(name==="password"){
+  this.setState({
+      password:value,
+  })
+  
+}
+  }
+
+  handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(this.state.users);
+      if (this.state.email==="" || this.state.password==="" ){
+          document.getElementById("err").style.display = 'block'
+          document.getElementById("err").innerHTML = "**please inter your email and password"
+      }
+      this.state.users.map((ele)=>{
+      if (ele.email!==this.state.email && ele.password!==this.state.password){
+          document.getElementById("err").style.display = 'block'
+          document.getElementById("err").innerHTML = "**please inter correct your email and password"
+      }
+  })
+      this.state.users.map((ele)=>{
+          if(ele.email===this.state.email && ele.password===this.state.password && this.state.email!=="" && this.state.password !==""){
+                console.log(true);
+                window.localStorage.setItem('email',this.state.email)
+                window.localStorage.setItem('id',ele.id)
+                // window.localStorage.setItem('image',ele.image)
+
+                window.location.assign('/home')
+
+                
+
+          }
+       
+      })
+
+      
+      
+      
+  }
+render() {
     return (
         <div className="theme-layout">
         <div className="container-fluid pdng0">
@@ -11,78 +84,38 @@ const Login = () => {
                 <div className="log-reg-area sign">
                   <h2 className="log-title">Login</h2>
                  
-                  <form method="post">
+                  <form className="loginRight" onSubmit={this.handleSubmit} noValidate >
+
                     <div className="form-group">	
-                      <input type="text" id="input" required="required" />
-                      <label className="control-label" htmlFor="input">Email</label><i className="mtrl-select" />
+                      <input  type='email' name='email' onBlur={this.handleBlur} noValidate />
+                      <label className="control-label" >Email</label><i className="mtrl-select" />
                     </div>
                     <div className="form-group">	
-                      <input type="password" required="required" />
-                      <label className="control-label" htmlFor="input">Password</label><i className="mtrl-select" />
+                      <input type="password" name='password' onBlur={this.handleBlur} noValidate />
+                      <label className="control-label">Password</label><i className="mtrl-select" />
                     </div>
-                   
+                    <p className="errorr" id="err"></p>
+
                     <div className="submit-btns">
-                      <button className="mtr-btn signin" type="button"><span>Login</span></button>
+                      <button className="mtr-btn signin"><span>Login</span></button>
                     </div>
-                    <p>Don’t have an account Yet? <a type="button"><span>Register</span></a> now.</p>
-                  </form>
+                    </form>
+                    <p>Don’t have an account Yet? <a href="/register"><span>Register</span></a> now.</p>
+                  
                 </div>
-                <div className="log-reg-area reg">
-                  <h2 className="log-title">Register</h2>
-                 
-                  <form method="post">
-                    <div className="form-group">	
-                      <input type="text" required="required" />
-                      <label className="control-label" htmlFor="input">First &amp; Last Name</label><i className="mtrl-select" />
-                    </div>
-                    <div className="form-group">	
-                      <input type="text" required="required" />
-                      <label className="control-label" htmlFor="input">User Name</label><i className="mtrl-select" />
-                    </div>
-                    <div className="form-group">	
-                      <input type="password" required="required" />
-                      <label className="control-label" htmlFor="input">Password</label><i className="mtrl-select" />
-                    </div>
-                    <div className="form-radio">
-                      <div className="radio">
-                        <label>
-                          <input type="radio" name="radio" defaultChecked="checked" /><i className="check-box" />Male
-                        </label>
-                      </div>
-                      <div className="radio">
-                        <label>
-                          <input type="radio" name="radio" /><i className="check-box" />Female
-                        </label>
-                      </div>
-                    </div>
-                    <div className="form-group">	
-                      <input type="text" required="required" />
-                      <label className="control-label" htmlFor="input"><a href="https://wpkixx.com/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="6c29010d05002c">[email&nbsp;protected]</a></label><i className="mtrl-select" />
-                    </div>
-                    <div className="checkbox">
-                      <label>
-                        <input type="checkbox" defaultChecked="checked" /><i className="check-box" />Accept Terms &amp; Conditions ?
-                      </label>
-                    </div>
-                    <a href="#" title className="already-have">Already have an account</a>
-                    <div className="submit-btns">
-                      <button className="mtr-btn signup" type="button"><span>Register</span></button>
-                    </div>
-                  </form>
-                </div>
+              
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div className="land-featurearea">
               <div className="land-meta">
-                <h1>Winku</h1>
+                <h1>405 FOUND</h1>
                 <p>
-                  Winku is free to use for as long as you want with two active projects.
+                Connect with friends and the world around you on 405 FOUND.
                 </p>
                 <div className="friend-logo">
                   <span><img src="images/wink.png" alt="" /></span>
                 </div>
-                <a href="#" title className="folow-me">Follow Us on</a>
               </div>	
             </div>
           </div>
@@ -92,4 +125,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+}

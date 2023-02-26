@@ -1,6 +1,167 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from "axios";
 
-const Register = () => {
+
+const validEmailRegex = 
+  RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+const checkPass=RegExp(/^^[A-Za-z]\w{8,31}$/);
+
+  const validateForm = (errors) => {
+    let valid = true;
+    Object.values(errors).forEach(
+      // if we have an error string set valid to false
+      (val) => val.length > 0 && (valid = false)
+    );
+    return valid;
+  }
+export default class Register extends Component {
+
+
+    constructor(props) {
+        super(props);
+          this.state = {
+            name: null,
+            email: null,
+            password: null,
+            phone: null,
+            repassword: null,
+            test:"",
+            accept:false,
+            users:[],
+            errors: {
+              name: '',
+              email: '',
+              phone: '',
+              password: '',
+              repassword: '',
+            }
+          };
+          this.users =this.props.users
+          console.log(this.users);
+        }
+        componentDidMount = () =>{
+          axios.get("http://localhost:80/projectReact7/back_end/user.php/users/")
+          .then((respone)=>{
+            let email = respone.data.map((ele) => {
+                  return ele.email
+            })
+            console.log(email);
+              this.setState({
+                  users:email
+              })
+              // setUsers(respone.data)
+              console.log(respone.data);
+          })
+      }
+        handleChange = (event) => {
+          console.log(event);
+          // event.preventDefault();
+          const { name, value } = event.target;
+          console.log( event.target.name, event.target.value );
+            // let name = event.target.name;
+            // let value = event.target.value;
+          let errors = this.state.errors;
+          switch (name) {
+            case 'name': 
+              errors.name = 
+                value.length < 5
+                  ? 'Full Name must be 5 characters long!'
+                  : '';
+              break;
+              case 'email': 
+              errors.email = 
+              !validEmailRegex.test(value)
+              ? 'Email is not valid!'
+              : this.state.users.includes(value) 
+              ? 'Email is already has been taken'
+              : '' ; 
+              break;
+              case 'phone': 
+                errors.phone = 
+                  value.length !== 10
+                    ? 'Phone must be 10 characters !'
+                    : '';
+                break;
+            case 'password': 
+            this.setState({
+              test:value
+            })
+            errors.password = 
+            checkPass.test(value)
+            
+            // value.length < 8 
+  
+            ? ''
+            : 'Password must be 8 characters long!';
+            break;
+            case 'repassword': 
+            console.log(this.state.test);
+              errors.repassword = 
+                value !== this.state.test
+                  ? 'Confirm Password not match!'
+                  : '';
+              break;
+            default:
+              break;
+          }
+        
+          this.setState({errors, [name]: value}, ()=> {
+              console.log(errors)
+          })
+        }
+
+
+
+        handleSubmit = (event) => {
+          event.preventDefault();
+          this.setState({accept:true,})
+
+          const { name, email,password,phone } = this.state;
+  
+          let errors = this.state.errors;
+          if(name === null){
+              errors.name =  'Name is required'
+          }
+          if(email=== null){
+              errors.email =  'email is required'
+          }
+          if(phone=== null){
+              errors.phone =  'phone is required'
+          }
+          if(password === null){
+              errors.password =  'password is required'
+          }
+   
+          this.setState({errors}, ()=> {
+              console.log(errors)
+          })
+  
+          if(validateForm(this.state.errors)) {
+            console.info('Valid Form')
+            // let newUser ={name:this.state.name,email:this.state.email,password:this.state.password}
+            // this.users.push(newUser);
+            let inputs = {name:this.state.name,email:this.state.email,phone:this.state.phone,password:this.state.password}
+            axios.post("http://localhost:80/405_found/back_end/user.php/save",inputs)
+            .then((respone)=>{
+                console.log(respone.data);
+                // window.location.assign('/');
+            })
+    
+  
+            // localStorage.setItem('users',JSON.stringify(this.users))
+          }else{
+            console.error('Invalid Form')
+          }
+          console.log( this.users);
+  
+        }
+      
+
+
+
+
+  render() {
+    const {errors} = this.state;
     return (
         <div className="theme-layout">
         <div className="container-fluid pdng0">
@@ -8,14 +169,14 @@ const Register = () => {
             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div className="land-featurearea">
                 <div className="land-meta">
-                  <h1>Winku</h1>
+                  <h1>405 FOUND</h1>
                   <p>
-                    Winku is free to use for as long as you want with two active projects.
+                  Connect with friends and the world around you on 405 FOUND.
                   </p>
                   <div className="friend-logo">
                     <span><img src="images/wink.png" alt="" /></span>
                   </div>
-                  <a href="#" title className="folow-me">Follow Us on</a>
+                  {/* <a href="#" title className="folow-me">Follow Us on</a> */}
                 </div>	
               </div>
             </div>
@@ -24,81 +185,49 @@ const Register = () => {
                 <div className="log-reg-area sign">
                   <h2 className="log-title">Register</h2>
                   
-                  <form method="post">
+                  <form method="POST" onSubmit={this.handleSubmit} noValidate >
+
                     <div className="form-group">	
-                      <input type="text" id="input" required="required" />
+                      <input   placeholder="Full name" type='text' name='name' onChange={this.handleChange} noValidate />
                       <label className="control-label" htmlFor="input">Full name</label><i className="mtrl-select" />
+                      {errors.name.length > 0 && this.state.accept && <span className='error'>{errors.name}</span>}
+
                     </div>
                     <div className="form-group">	
-                    <input type="email" id="input" required="required" />
+                    <input type="email"   placeholder="email"  name='email' onChange={this.handleChange} noValidate />
                     <label className="control-label" htmlFor="input">Email</label><i className="mtrl-select" />
+                    {errors.email.length > 0 && this.state.accept && <span className='error'>{errors.email}</span>}
+
                   </div>
                     <div className="form-group">	
-                    <input type="text" id="input" required="required" />
+                    <input type="text"   placeholder="phone"  name='phone' onChange={this.handleChange} noValidate />
                     <label className="control-label" htmlFor="input">Phone</label><i className="mtrl-select" />
+                    {errors.phone.length > 0 && this.state.accept && <span className='error'>{errors.phone}</span>}
+
                   </div>
                     <div className="form-group">	
-                      <input type="password" required="required" />
+                      <input type="password" placeholder="password" name="password" onChange={this.handleChange} noValidate />
                       <label className="control-label" htmlFor="input">Password</label><i className="mtrl-select" />
+                      {errors.password.length > 0 && this.state.accept && <span className='error'>{errors.password}</span>}
+
                     </div>
                     <div className="form-group">	
-                      <input type="password" required="required" />
+                      <input type="password" placeholder="Confirm password" name='repassword' onChange={this.handleChange} noValidate />
                       <label className="control-label" htmlFor="input">Confirm Password</label><i className="mtrl-select" />
+                      {errors.repassword.length > 0 && this.state.accept && <span className='error'>{errors.repassword}</span>}
+
                     </div>
                    
                     
                     <div className="submit-btns">
-                      <button className="mtr-btn signup" type="button"><span>Register</span></button>
-                     
+                      <button className="mtr-btn signup"><span>Register</span></button>
+
                     </div>
-                    <p>Already have an account? <a type="button"><span>Login Now!</span></a></p>
-                  </form>
+                    </form>
+                    <p>Already have an account? <a href='/' type="button"><span>Login Now!</span></a></p>
+                  
                 </div>
-                <div className="log-reg-area reg">
-                  <h2 className="log-title">Register</h2>
-                  <p>
-                    Don’t use Winku Yet? <a href="#" title>Take the tour</a> or <a href="#" title>Join now</a>
-                  </p>
-                  <form method="post">
-                    <div className="form-group">	
-                      <input type="text" required="required" />
-                      <label className="control-label" htmlFor="input">First &amp; Last Name</label><i className="mtrl-select" />
-                    </div>
-                    <div className="form-group">	
-                      <input type="text" required="required" />
-                      <label className="control-label" htmlFor="input">User Name</label><i className="mtrl-select" />
-                    </div>
-                    <div className="form-group">	
-                      <input type="password" required="required" />
-                      <label className="control-label" htmlFor="input">Password</label><i className="mtrl-select" />
-                    </div>
-                    <div className="form-radio">
-                      <div className="radio">
-                        <label>
-                          <input type="radio" name="radio" defaultChecked="checked" /><i className="check-box" />Male
-                        </label>
-                      </div>
-                      <div className="radio">
-                        <label>
-                          <input type="radio" name="radio" /><i className="check-box" />Female
-                        </label>
-                      </div>
-                    </div>
-                    <div className="form-group">	
-                      <input type="text" required="required" />
-                      <label className="control-label" htmlFor="input"><a href="https://wpkixx.com/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="6c29010d05002c">[email&nbsp;protected]</a></label><i className="mtrl-select" />
-                    </div>
-                    <div className="checkbox">
-                      <label>
-                        <input type="checkbox" defaultChecked="checked" /><i className="check-box" />Accept Terms &amp; Conditions ?
-                      </label>
-                    </div>
-                    <a href="#" title className="already-have">Already have an account</a>
-                    <div className="submit-btns">
-                      <button className="mtr-btn signup" type="button"><span>Register</span></button>
-                    </div>
-                  </form>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -107,4 +236,4 @@ const Register = () => {
     );
 }
 
-export default Register;
+}
