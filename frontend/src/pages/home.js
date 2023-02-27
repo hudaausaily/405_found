@@ -44,7 +44,7 @@ const Home = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:80/projectReact7/back_end/posts.php", formData
+          "http://localhost:80/405_found/back_end/posts.php", formData
         );
         console.log(response.data);
         window.location.assign('/home');

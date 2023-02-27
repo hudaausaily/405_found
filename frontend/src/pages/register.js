@@ -40,7 +40,7 @@ export default class Register extends Component {
           console.log(this.users);
         }
         componentDidMount = () =>{
-          axios.get("http://localhost:80/projectReact7/back_end/user.php/users/")
+          axios.get("http://localhost:80/405_found/back_end/user.php/users/")
           .then((respone)=>{
             let email = respone.data.map((ele) => {
                   return ele.email
