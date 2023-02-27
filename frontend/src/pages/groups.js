@@ -1,7 +1,7 @@
 import React from 'react';
 import GroupRightBar from '../components/groupRightBar';
 import Navbar from '../components/navbar';
-import Rightbar from '../components/rightbar';
+import Rightbar2 from '../components/rightbar2';
 import Sidebar from '../components/sidebar';
 
 const Groups = () => {
@@ -148,7 +148,7 @@ const Groups = () => {
                       </div>{/* photos */}
                     </div>{/* centerl meta */}
                 
-                    <Rightbar/>    {/* sidebar */}
+                    <Rightbar2/>    {/* sidebar */}
                   </div>	
                 </div>
               </div>
