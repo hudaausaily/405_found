@@ -144,7 +144,7 @@ export default class Register extends Component {
             axios.post("http://localhost:80/405_found/back_end/user.php/save",inputs)
             .then((respone)=>{
                 console.log(respone.data);
-                // window.location.assign('/');
+                window.location.assign('/');
             })
     
   
