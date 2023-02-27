@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Rightbar = () => {
+const Rightbar3 = () => {
     return (
         
                          <div className="col-lg-3">
                               <aside className="sidebar static">
-                              
+                              <div className="add-btn" >
+                              <a href="#" title data-ripple style={{width:'100%', textAlign:'center'}}>Add Friend</a>
+                              </div><br></br>
                                 <div className="widget">
                                   <div className="banner medium-opacity bluesh">
                                     <div className="bg-image" style={{backgroundImage: 'url(images/resources/baner-widgetbg.jpg)'}} />
@@ -185,4 +187,4 @@ const Rightbar = () => {
     );
 }
 
-export default Rightbar;
+export default Rightbar3;
