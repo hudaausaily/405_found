@@ -4,7 +4,7 @@ import Rightbar from '../components/rightbar';
 import Sidebar from '../components/sidebar';
 
 
-const Users = () => {
+const Friends = () => {
     return (
         <div className="theme-layout">
         <Navbar/>
@@ -164,4 +164,4 @@ const Users = () => {
     );
 }
 
-export default Users;
+export default Friends;
