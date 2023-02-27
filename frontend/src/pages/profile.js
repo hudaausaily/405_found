@@ -13,8 +13,9 @@ const Profile = () => {
                       <div className="feature-photo">
                         <figure><img src="images/resources/timeline-1.jpg" alt="" /></figure>
                         <div className="add-btn">
-                          <span>1205 followers</span>
-                          <a href="#" title data-ripple>Add Friend</a>
+                          <span>1205 friends</span>
+                          
+                          <a href="#" title data-ripple>Edit Profile</a>
                         </div>
                         <form className="edit-phto">
                           <i className="fa fa-camera-retro" />
