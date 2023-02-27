@@ -15,7 +15,7 @@ function App() {
     <Route path="/" element={ <Login/> } />
     <Route path="/register" element={ <Register/> } />
     <Route path="/groups" element={<Groups/>}/>
-    <Route path="/singleGroup" element={<SingleGroup/>}/>
+    <Route path="/singleGroup/:id/show" element={<SingleGroup/>}/>
     <Route path="/profile" element={<Profile/>}/>
 
   </Routes>
