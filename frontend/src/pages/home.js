@@ -5,6 +5,7 @@ import Navbar from '../components/navbar';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MdDeleteForever } from 'react-icons/md';
+import { AiFillEdit } from 'react-icons/ai';
 
 
 
@@ -117,9 +118,10 @@ const Home = () => {
                                         <img src="images/resources/friend-avatar10.jpg" alt="" />
                                       </figure>
                                       <div className="friend-name">
-                                        <ins><a stylehref="time-line.html" title>Janice Griffith</a></ins> <span><MdDeleteForever/></span>
+                                        <ins><a stylehref="time-line.html" title>Janice Griffith</a></ins> 
                                         <span>published: june,2 2018 19:PM</span> 
                                       </div>
+                                      <span><AiFillEdit className='icons'/><MdDeleteForever className='icons' style={{color:'red'}}/></span>
                                       <div className="post-meta">
                                         <img src="images/resources/user-post.jpg" alt="" />
                                         <div className="we-video-info">
