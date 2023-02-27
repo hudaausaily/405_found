@@ -24,7 +24,7 @@ const Friends = () => {
                     <div className="col-lg-6">
                       <div className="central-meta">
                         <div className="groups">
-                          <span><i className="fa fa-users" />All Users</span>
+                          <span><i className="fa fa-users" />Friends</span>
                         </div>
                         <ul className="nearby-contct">
                           <li>
@@ -36,7 +36,7 @@ const Friends = () => {
                                 <h4><a href="time-line.html" title>funparty</a></h4>
                                 
                                 
-                                <a href="#" title className="add-butn" data-ripple>add friend</a>
+                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
@@ -48,7 +48,7 @@ const Friends = () => {
                               <div className="pepl-info">
                                 <h4><a href="time-line.html" title>ABC News</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>add friend</a>
+                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
@@ -61,7 +61,7 @@ const Friends = () => {
                                 <h4><a href="time-line.html" title>SEO Zone</a></h4>
                                 
                                 
-                                <a href="#" title className="add-butn" data-ripple>add friend</a>
+                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
@@ -74,7 +74,7 @@ const Friends = () => {
                                 <h4><a href="time-line.html" title>Max Us</a></h4>
                                 
                                 
-                                <a href="#" title className="add-butn" data-ripple>add friend</a>
+                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
@@ -86,7 +86,7 @@ const Friends = () => {
                               <div className="pepl-info">
                                 <h4><a href="time-line.html" title>Banana Group</a></h4>
                                
-                                <a href="#" title className="add-butn" data-ripple>add friend</a>
+                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
@@ -98,7 +98,7 @@ const Friends = () => {
                               <div className="pepl-info">
                                 <h4><a href="time-line.html" title>Bad boys n Girls</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>add friend</a>
+                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
@@ -110,7 +110,7 @@ const Friends = () => {
                               <div className="pepl-info">
                                 <h4><a href="time-line.html" title>bachelor's fun</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>add friend</a>
+                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
@@ -122,7 +122,7 @@ const Friends = () => {
                               <div className="pepl-info">
                                 <h4><a href="time-line.html" title>Max Us</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>add friend</a>
+                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
@@ -134,7 +134,7 @@ const Friends = () => {
                               <div className="pepl-info">
                                 <h4><a href="time-line.html" title>SEO Zone</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>add friend</a>
+                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
