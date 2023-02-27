@@ -5,6 +5,7 @@ import Sidebar from '../components/sidebar';
 import Nav from '../components/nav';
 import GroupRightBar from '../components/groupRightBar';
 import { MdDeleteForever } from 'react-icons/md';
+import { AiFillEdit } from 'react-icons/ai';
 
 
 
@@ -121,14 +122,15 @@ const SingleGroup = () => {
                         <div className="loadMore">
                         <div className="central-meta item">
                         <div className="user-post">
-                          <div className="friend-info">
+                          <span className="friend-info">
                             <figure>
                               <img src="images/resources/friend-avatar10.jpg" alt="" />
                             </figure>
-                            <div className="friend-name">
-                              <ins><a stylehref="time-line.html" title>Janice Griffith</a></ins> <span><MdDeleteForever/></span>
+                            <span className="friend-name" >
+                              <ins><a stylehref="time-line.html" title>Janice Griffith</a></ins> 
                               <span>published: june,2 2018 19:PM</span> 
-                            </div>
+                            </span>
+                            <span><AiFillEdit className='icons'/><MdDeleteForever className='icons' style={{color:'red'}}/></span>
                             <div className="post-meta">
                               <img src="images/resources/user-post.jpg" alt="" />
                               <div className="we-video-info">
@@ -197,7 +199,7 @@ const SingleGroup = () => {
                                 </p>
                               </div>
                             </div>
-                          </div>
+                          </span>
                           <div className="coment-area">
                             <ul className="we-comet">
                           {/*  COMMENT*/ }

@@ -10,19 +10,21 @@ import Profile from './pages/profile'
 import EditProfile from './pages/editProfile';
 import Users from './pages/users';
 import CreateGroup from './pages/createGroup';
+import Friends from './pages/friends';
 
 function App() {
   return (
     <Routes>
     <Route path="/home" element={ <Home/> } />
     <Route path="/users" element={ <Users/> } />
+    <Route path="/friends" element={ <Friends/> } />
     <Route path="/" element={ <Login/> } />
     <Route path="/register" element={ <Register/> } />
     <Route path="/groups" element={<Groups/>}/>
     <Route path="/singleGroup" element={<SingleGroup/>}/>
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/editProfile" element={<EditProfile/>}/>
-    <Route path="createGroup" element={<CreateGroup/>}/>
+    <Route path="/createGroup" element={<CreateGroup/>}/>
 
   </Routes>
   );
