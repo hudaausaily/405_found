@@ -4,8 +4,8 @@ import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { MdDeleteForever } from 'react-icons/md';
-import { AiFillEdit } from 'react-icons/ai';
+
+import Post1 from '../components/post1';
 
 
 
@@ -26,7 +26,7 @@ const Home = () => {
 
         const getUsers = async () => {
 
-        await axios.get(`http://localhost:80/react_project/back_end/user.php/read/${current_ID}`)
+        await axios.get(`http://localhost:80/405/back_end/user.php/read/${current_ID}`)
         .then((respone)=>{
             setUsers(respone.data[0])
           
@@ -111,7 +111,7 @@ const Home = () => {
                               {/* add post new box */}
                               <div className="loadMore">
                               {/*POST*/}
-                            
+                             <Post1/>
                                 
                               </div>
                             </div>{/* centerl meta */}

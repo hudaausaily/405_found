@@ -202,9 +202,9 @@ section {
     padding: 0;
 }
 
-.merged.row {
+/* .merged.row {
     margin: 0;
-}
+} */
 
 .merged.row > div {
     padding: 0;
@@ -292,7 +292,7 @@ section {
 .gray-bg {
     float: left;
     width: 100%;
-    background: #f4f2f2;
+    background: gray;
 }
 
 [type="submit"],
@@ -495,8 +495,10 @@ header.sticky {
 }
 
 .land-featurearea {
-    background: #1fb6ff none repeat scroll 0 0;
+    background: brown none repeat scroll 0 0;
     color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
     float: left;
     height: 100vh;
     position: relative;
@@ -513,12 +515,15 @@ header.sticky {
 }
 
 .land-meta > h1 {
-    font-family: hobo std;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 60px;
 }
 
 .land-meta > p {
     color: #fff;
     letter-spacing: 0.5px;
+    font-size: 18px;
 }
 
 .log-reg-area > p {
@@ -551,6 +556,7 @@ header.sticky {
     z-index: -1;
 }
 
+
 .land-meta > a.folow-me:hover {
     text-shadow: 0 1px 1px #454545;
 }
@@ -565,7 +571,7 @@ header.sticky {
 
 .log-reg-area {
     background: #fff none repeat scroll 0 0;
-    box-shadow: 0 0 35px #e2e2e2;
+    box-shadow: 0 0 15px #e2e2e2;
     display: block;
     float: none;
     left: 50%;
@@ -639,7 +645,7 @@ header.sticky {
 /*--- topbar ---*/
 
 .topbar {
-    background: #fff;
+    background: black;
     display: block;
     height: 60px;
     padding: 0 48px;
@@ -654,6 +660,10 @@ header.sticky {
     width: 15%;
     position: relative;
     z-index: 10;
+}
+
+.logo img{
+    height: 55px;
 }
 
 .topbar > form {
@@ -718,6 +728,7 @@ header.sticky {
     transform: scale(0.7);
     vertical-align: inherit;
 }
+
 
 .form-search {
     position: absolute;
