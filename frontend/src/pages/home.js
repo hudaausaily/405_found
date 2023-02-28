@@ -25,7 +25,7 @@ const Home = () => {
 
         const getUsers = async () => {
 
-        await axios.get(`http://localhost:80/react_project/back_end/user.php/read/${current_ID}`)
+        await axios.get(`http://localhost:80/405/back_end/user.php/read/${current_ID}`)
         .then((respone)=>{
             setUsers(respone.data[0])
           
@@ -44,7 +44,7 @@ const Home = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:80/projectReact7/back_end/posts.php", formData
+          "http://localhost:80/405_found/back_end/posts.php", formData
         );
         console.log(response.data);
         window.location.assign('/home');

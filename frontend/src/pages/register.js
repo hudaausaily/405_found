@@ -164,72 +164,73 @@ export default class Register extends Component {
     const {errors} = this.state;
     return (
         <div className="theme-layout">
-        <div className="container-fluid pdng0">
+        <div className="container-fluid pdng0 black">
           <div className="row merged">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div className="land-featurearea">
-                <div className="land-meta">
-                  <h1>405 FOUND</h1>
-                  <p>
-                  Connect with friends and the world around you on 405 FOUND.
-                  </p>
-                  <div className="friend-logo">
-                    <span><img src="images/wink.png" alt="" /></span>
-                  </div>
-                  {/* <a href="#" title className="folow-me">Follow Us on</a> */}
-                </div>	
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div className="login-reg-bg">
+        
+            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+              <div className="login-reg-bg black">
                 <div className="log-reg-area sign">
                   <h2 className="log-title">Register</h2>
                   
-                  <form method="POST" onSubmit={this.handleSubmit} noValidate >
+                  <form method="POST" onSubmit={this.handleSubmit} noValidate style={{maxHeight:'500px'}} >
 
-                    <div className="form-group">	
-                      <input   placeholder="Full name" type='text' name='name' onChange={this.handleChange} noValidate />
+                    <div className="form-group inputMargin">	
+                      <input  placeholder=" " type='text' name='name' onChange={this.handleChange} noValidate />
                       <label className="control-label" htmlFor="input">Full name</label><i className="mtrl-select" />
                       {errors.name.length > 0 && this.state.accept && <span className='error'>{errors.name}</span>}
 
                     </div>
-                    <div className="form-group">	
-                    <input type="email"   placeholder="email"  name='email' onChange={this.handleChange} noValidate />
+                    <div className="form-group inputMargin">	
+                    <input type="email"   placeholder=""  name='email' onChange={this.handleChange} noValidate />
                     <label className="control-label" htmlFor="input">Email</label><i className="mtrl-select" />
                     {errors.email.length > 0 && this.state.accept && <span className='error'>{errors.email}</span>}
 
                   </div>
-                    <div className="form-group">	
-                    <input type="text"   placeholder="phone"  name='phone' onChange={this.handleChange} noValidate />
+                    <div className="form-group inputMargin">	
+                    <input type="text"   placeholder=""  name='phone' onChange={this.handleChange} noValidate />
                     <label className="control-label" htmlFor="input">Phone</label><i className="mtrl-select" />
                     {errors.phone.length > 0 && this.state.accept && <span className='error'>{errors.phone}</span>}
 
                   </div>
-                    <div className="form-group">	
-                      <input type="password" placeholder="password" name="password" onChange={this.handleChange} noValidate />
+                    <div className="form-group inputMargin">	
+                      <input type="password" placeholder="" name="password" onChange={this.handleChange} noValidate />
                       <label className="control-label" htmlFor="input">Password</label><i className="mtrl-select" />
                       {errors.password.length > 0 && this.state.accept && <span className='error'>{errors.password}</span>}
 
                     </div>
-                    <div className="form-group">	
-                      <input type="password" placeholder="Confirm password" name='repassword' onChange={this.handleChange} noValidate />
+                    <div className="form-group inputMargin">	
+                      <input type="password" placeholder=" " name='repassword' onChange={this.handleChange} noValidate />
                       <label className="control-label" htmlFor="input">Confirm Password</label><i className="mtrl-select" />
                       {errors.repassword.length > 0 && this.state.accept && <span className='error'>{errors.repassword}</span>}
 
                     </div>
                    
                     
-                    <div className="submit-btns">
-                      <button className="mtr-btn signup"><span>Register</span></button>
+                    <div className="submit-btns ">
+                      <button className="mtr-btn signup red"><span>Register</span></button>
 
                     </div>
                     </form>
-                    <p>Already have an account? <a href='/' type="button"><span>Login Now!</span></a></p>
+                    <p>Already have an account? <a href='/' type="button"><span className='redtext'>Login Now!</span></a></p>
                   
                 </div>
               
               </div>
             </div>
+            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div className="land-featurearea">
+              <div className="land-meta">
+                <h1>405 FOUND</h1>
+                <p>
+                Connect with software developers community around you on 405 FOUND.
+                </p>
+                <div className="friend-logo">
+                  <div className='logoreg'><img src="images/tag2.png" alt="" /></div>
+                </div>
+                {/* <a href="#" title className="folow-me">Follow Us on</a> */}
+              </div>	
+            </div>
+          </div>
           </div>
         </div>
       </div>

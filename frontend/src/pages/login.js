@@ -78,11 +78,23 @@ render() {
         <div className="theme-layout">
         <div className="container-fluid pdng0">
           <div className="row merged">
-           
+          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div className="land-featurearea">
+            <div className="land-meta">
+              <h1>405 FOUND</h1>
+              <p>
+              While (!(succeed=try()));
+              </p>
+              <div className="friend-logo">
+                <div><img src="images/tag2.png" alt="" /></div>
+              </div>
+            </div>	
+          </div>
+        </div>
             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div className="login-reg-bg">
+              <div className="login-reg-bg black">
                 <div className="log-reg-area sign">
-                  <h2 className="log-title">Login</h2>
+                  <h2 className="log-title" style={{marginBottom:'40px'}}>Login</h2>
                  
                   <form className="loginRight" onSubmit={this.handleSubmit} noValidate >
 
@@ -96,29 +108,17 @@ render() {
                     </div>
                     <p className="errorr" id="err"></p>
 
-                    <div className="submit-btns">
-                      <button className="mtr-btn signin"><span>Login</span></button>
+                    <div className="submit-btns" style={{marginTop:'-50px'}}>
+                      <button className="mtr-btn signin red" ><span>Login</span></button>
                     </div>
                     </form>
-                    <p>Don’t have an account Yet? <a href="/register"><span>Register</span></a> now.</p>
+                    <p>Don’t have an account Yet? <a href="/register"><span className='redtext'>Register</span></a> now.</p>
                   
                 </div>
               
               </div>
             </div>
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div className="land-featurearea">
-              <div className="land-meta">
-                <h1>405 FOUND</h1>
-                <p>
-                Connect with friends and the world around you on 405 FOUND.
-                </p>
-                <div className="friend-logo">
-                  <span><img src="images/wink.png" alt="" /></span>
-                </div>
-              </div>	
-            </div>
-          </div>
+          
           </div>
         </div>
       </div>

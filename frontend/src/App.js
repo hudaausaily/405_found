@@ -11,6 +11,7 @@ import EditProfile from './pages/editProfile';
 import Users from './pages/users';
 import CreateGroup from './pages/createGroup';
 import Friends from './pages/friends';
+import Nav from './components/nav';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/editProfile" element={<EditProfile/>}/>
     <Route path="/createGroup" element={<CreateGroup/>}/>
+    <Route path="/nav" element={<Nav/>}/>
 
   </Routes>
   );

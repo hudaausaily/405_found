@@ -202,9 +202,9 @@ section {
     padding: 0;
 }
 
-.merged.row {
+/* .merged.row {
     margin: 0;
-}
+} */
 
 .merged.row > div {
     padding: 0;
@@ -495,8 +495,10 @@ header.sticky {
 }
 
 .land-featurearea {
-    background: #1fb6ff none repeat scroll 0 0;
+    background: brown none repeat scroll 0 0;
     color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
     float: left;
     height: 100vh;
     position: relative;
@@ -513,12 +515,15 @@ header.sticky {
 }
 
 .land-meta > h1 {
-    font-family: hobo std;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 60px;
 }
 
 .land-meta > p {
     color: #fff;
     letter-spacing: 0.5px;
+    font-size: 18px;
 }
 
 .log-reg-area > p {
@@ -565,7 +570,7 @@ header.sticky {
 
 .log-reg-area {
     background: #fff none repeat scroll 0 0;
-    box-shadow: 0 0 35px #e2e2e2;
+    box-shadow: 0 0 15px #e2e2e2;
     display: block;
     float: none;
     left: 50%;
