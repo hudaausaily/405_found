@@ -14,34 +14,12 @@ $conn = $object->connect();
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-switch($method){
-    case "GET":
-
-      
-            $path = explode('/',$_SERVER['REQUEST_URI']);
-            // اللي بعثهم المستخدم pending عرض جميع طلبات الصداقة في حالة 
-            $sql = "SELECT *
-            FROM members
-            WHERE user_id = :id and status = :status";
-            $stmt =$conn->prepare($sql);
-            $status = "accepted" ;
-            $stmt->bindParam(':status', $status);
-            $stmt->bindParam(':id', $path[3]);
-
-            $stmt->execute();
-
-            $members = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            echo json_encode( $members);
-    
-        break;
-
-        case "PUT":
 
 
-            $user = json_decode(file_get_contents('php://input'));
+$user = json_decode(file_get_contents('php://input'));
 
 
+// حذف الادمن لطلب الانظمام
 
             $sql = "DELETE  FROM members WHERE user_id = :user_id and group_id = :group_id ";
             
@@ -58,17 +36,4 @@ switch($method){
                 $response = ['status'=>0,'message'=>'Failed to delete  record.'];
             
             }
-            echo json_encode( $response);        
-            break;
-
-        
-
-
-
-
-
-
-
-
-}
-
+            echo json_encode( $response);  

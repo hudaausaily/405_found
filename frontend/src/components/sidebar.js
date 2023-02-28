@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const current_ID = JSON.parse(localStorage.getItem("id"));
@@ -14,7 +15,7 @@ const Sidebar = () => {
 
   function getGroups() {
     axios
-      .get(`http://localhost:80/frontend/405_found/groups.php/`)
+      .get(`http://localhost:80/405_found/back_end/groups.php/`)
       .then((response) => {
         console.log(response.data);
         setGroups(response.data);
@@ -24,7 +25,7 @@ const Sidebar = () => {
   const getMyAcceptrdGroups = () => {
     axios
       .get(
-        `http://localhost:80/frontend/405_found/getMyGroupAcceptedStatus.php/${current_ID}`
+        `http://localhost:80/405_found/back_end/getMyGroupAcceptedStatus.php/${current_ID}`
       )
       .then((response) => {
         console.log(response.data);
@@ -40,45 +41,40 @@ const Sidebar = () => {
           <ul className="naves">
             <li>
               <i className="ti-clipboard" />
-              <a href="/home" title>
+              <Link to="/home" title>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <i className="ti-user" />
-              <a href="/profile" title>
+              <Link to="/profile" title>
                 Profile
-              </a>
+              </Link>
             </li>
             <li>
               <i className="ti-mouse-alt" />
-              <a href="/groups" title>
+              <Link to="/groups" title>
                 Groups
-              </a>
+              </Link>
             </li>
-            <li>
-              <i className="ti-mouse-alt" />
-              <a href="inbox.html" title>
-                Friends
-              </a>
-            </li>
+      
             <li>
               <i className="ti-files" />
-              <a href="/Allusers" title>
+              <Link to="/Allusers" title>
                 All Users
-              </a>
+              </Link>
             </li>
 
             <li>
               <i className="ti-power-off" />
-              <a href="landing.html" title>
+              <Link to="landing.html" title>
                 Logout
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         {/* Shortcuts */}
-
+{/* ____________________________________________Joined Groups_________________________________________________________ */}
         <div className="widget stick-widget">
           <h4 className="widget-title">Joined Groups</h4>
           <ul
@@ -104,11 +100,11 @@ const Sidebar = () => {
                     </figure>
                     <div className="friend-meta">
                       <h4>
-                        <a href={`/singleGroup/${element.group_id}/show`} title>
+                        <Link to={`/groups/singleGroup/${element.group_id}/show`} title>
                           {element.group_name}
-                        </a>
+                        </Link>
                       </h4>
-                      {/* <a href="#" title className="underline">Add Friend</a> */}
+                      {/* <Link to="#" title className="underline">Add Friend</Link> */}
                     </div>
                   </li>
                 );
@@ -116,7 +112,7 @@ const Sidebar = () => {
           </ul>
         </div>
         {/* recent activites */}
-
+{/* ____________________________________________My Groups_________________________________________________________ */}
         <div className="widget stick-widget">
           <h4 className="widget-title">My Groups</h4>
           <ul
@@ -142,11 +138,11 @@ const Sidebar = () => {
                     </figure>
                     <div className="friend-meta">
                       <h4>
-                        <a href={`/singleGroup/${element.group_id}/show`} title>
+                        <Link to={`/groups/singleGroup/${element.group_id}/show`} title>
                           {element.group_name}
-                        </a>
+                        </Link>
                       </h4>
-                      {/* <a href="#" title className="underline">Add Friend</a> */}
+                      {/* <Link to="#" title className="underline">Add Friend</Link> */}
                     </div>
                   </li>
                 );
