@@ -25,6 +25,8 @@ const handleSubmit = async (e) => {
         formData
       );
       console.log(response.data);
+      window.location.assign('/groups')
+
     } catch (error) {
       console.error(error);
     }

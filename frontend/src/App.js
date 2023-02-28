@@ -21,9 +21,9 @@ function App() {
     <Route path="/" element={ <Login/> } />
     <Route path="/register" element={ <Register/> } />
     <Route path="/groups" element={<Groups/>}/>
-    <Route path="/singleGroup/:id/show" element={<SingleGroup/>}/>
+    <Route path="/groups/singleGroup/:id/show" element={<SingleGroup/>}/>
     <Route path="/profile" element={<Profile/>}/>
-    <Route path="/editProfile" element={<EditProfile/>}/>
+    <Route path="/profile/editProfile/:id/edit" element={<EditProfile/>}/>
     <Route path="/createGroup" element={<CreateGroup/>}/>
 
     <Route path="/friends" element={ <Friends/> } />

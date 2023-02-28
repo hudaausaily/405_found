@@ -4,6 +4,7 @@ import RightBarcreateGrope from '../components/rightBarcreateGrope';
 import Sidebar from '../components/sidebar';
 import { useState , useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Groups = () => {
 
@@ -11,7 +12,6 @@ const Groups = () => {
   const current_ID = JSON.parse(localStorage.getItem('id'));
 
   const[data,setData]=useState([]);
-  const[showUpdateForm,setShowUpdateForm]=useState(false);
   const [pendingMembers,setPendingMembers] = useState([]);
   const [acceptedMembers,setAcceptedMembers] = useState([]);
 
@@ -89,33 +89,6 @@ axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs
   }
 
 // __________
-const [text, setText] = useState("");
-const [file, setFile] = useState(null);
-const [groupDescription, setGroupDescription] = useState(null);
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  const formData = new FormData();
-  formData.append("text", text);
-  formData.append("user_id", current_ID);
-  formData.append("file", file);
-  formData.append("group_description", groupDescription);
-
-  try {
-    const response = await axios.post(
-      "http://localhost:80/405_found/back_end/groups.php",
-      formData
-    );
-    console.log(response.data);
-    setShowUpdateForm(false);
-    window.location.assign('/Allgroups');
-
-
-  } catch (error) {
-    console.error(error);
-  }
-};
 
 
     return (
@@ -154,8 +127,8 @@ const handleSubmit = async (e) => {
                                 <a href="time-line.html" title><img src={require(`../image/${ele.group_image}`)} alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>{ele.name}</a></h4>
-                                <span> <a href={`/singleGroup/${ele.group_id}/show`}> Show Group </a></span>
+                                <h4><a href="time-line.html" title>{ele.group_name}</a></h4>
+                                <span> <Link to={`/groups/singleGroup/${ele.group_id}/show`}> Show Group </Link></span>
                                 <em>32k Members</em>
 
 
@@ -164,7 +137,7 @@ const handleSubmit = async (e) => {
                             if (pendingMembers.includes(ele.group_id) || acceptedMembers.includes(ele.group_id) ){
                                 if(pendingMembers.includes(ele.group_id)){
                                   return ( 
-                                          <p  title onClick={()=>removeRequest(ele.group_id)} className="add-butn" data-ripple>remove request</p> 
+                                          <button  title onClick={()=>removeRequest(ele.group_id)} className="add-butn" data-ripple>remove request</button> 
 
                                       
                                       )
@@ -172,7 +145,7 @@ const handleSubmit = async (e) => {
                                 }
                                 if(acceptedMembers.includes(ele.group_id)){
                                     return (
-                                        <p onClick={()=>removeRequest(ele.group_id)} title className="add-butn" data-ripple>join now</p>
+                                        <button onClick={()=>removeRequest(ele.group_id)} title className="add-butn" data-ripple>join now</button>
 
                 
 
@@ -184,7 +157,7 @@ const handleSubmit = async (e) => {
                              
                             }else{
                               return ( 
-                                        <p title onClick={()=>AddToGroup(ele.group_id)} className="add-butn" data-ripple>join now</p>
+                                        <button title onClick={()=>AddToGroup(ele.group_id)} className="add-butn" data-ripple>join now</button>
 
                               
                             
