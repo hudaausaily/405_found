@@ -1,10 +1,123 @@
 import React from 'react';
-import GroupRightBar from '../components/groupRightBar';
 import Navbar from '../components/navbar';
-import Rightbar2 from '../components/rightbar2';
+import RightBarcreateGrope from '../components/rightBarcreateGrope';
 import Sidebar from '../components/sidebar';
+import { useState , useEffect } from 'react';
+import axios from 'axios';
 
 const Groups = () => {
+
+
+  const current_ID = JSON.parse(localStorage.getItem('id'));
+
+  const[data,setData]=useState([]);
+  const[showUpdateForm,setShowUpdateForm]=useState(false);
+  const [pendingMembers,setPendingMembers] = useState([]);
+  const [acceptedMembers,setAcceptedMembers] = useState([]);
+
+  useEffect(()=>{
+    getGroups();
+    getPendingMempers();
+    getAcceptedMempers();
+          },[])
+
+          // لعرض كل الجروبات في الموقع
+
+  const getGroups =()=>{
+      
+      axios.get("http://localhost/405_found/back_end/groups.php")
+    
+      .then((res)=>{
+          console.log(res.data)
+          setData(res.data)
+      })
+ } 
+
+
+// لاضافة عضو لجروب معين
+const AddToGroup = (groupId) => {
+let inputs = {user_id:current_ID , group_id:groupId};
+axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs)
+.then((respone)=>{
+    console.log(respone.data);
+    getGroups();
+    getPendingMempers();
+    
+          // getFriendsRequest();
+})
+}
+   //للجروبات pending لعرض كل طلبات المستخدم اللي حالتهم 
+  const getPendingMempers = () => {
+
+      axios.get(`http://localhost:80/405_found/back_end/getPendingMember.php/${current_ID}`)
+      .then((respone)=>{
+          console.log(respone.data);
+          let pendingMembers = respone.data.map((ele)=>{
+              return ele.group_id
+          })
+          console.log(pendingMembers);
+          setPendingMembers(pendingMembers);
+          // setPendingMempers(respone.data)
+      })
+  }
+
+       //للجروبات accepted لعرض كل طلبات المستخدم اللي حالتهم 
+       const getAcceptedMempers = () => {
+
+        axios.get(`http://localhost:80/405_found/back_end/getAcceptedMember.php/${current_ID}`)
+        .then((respone)=>{
+            console.log(respone.data);
+            let acceptedMembers = respone.data.map((ele)=>{
+                return ele.group_id
+            })
+            console.log(acceptedMembers);
+            setAcceptedMembers(acceptedMembers);
+            // setPendingMempers(respone.data)
+        })
+    }
+
+// لحذب طلب الاضافة 
+  const removeRequest = (GroupId) => {
+    let inputs = {user_id:current_ID , group_id:GroupId};
+    axios.put(`http://localhost:80/405_found/back_end/getPendingMember.php/edit`,inputs)
+    .then((respone)=>{
+        console.log(respone.data);
+        getGroups();
+        getPendingMempers();
+    })
+
+  }
+
+// __________
+const [text, setText] = useState("");
+const [file, setFile] = useState(null);
+const [groupDescription, setGroupDescription] = useState(null);
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData();
+  formData.append("text", text);
+  formData.append("user_id", current_ID);
+  formData.append("file", file);
+  formData.append("group_description", groupDescription);
+
+  try {
+    const response = await axios.post(
+      "http://localhost:80/405_found/back_end/groups.php",
+      formData
+    );
+    console.log(response.data);
+    setShowUpdateForm(false);
+    window.location.assign('/Allgroups');
+
+
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
     return (
         <div className="theme-layout">
         <Navbar/>
@@ -27,128 +140,73 @@ const Groups = () => {
                           <span><i className="fa fa-users" /> Groups</span>
                         </div>
                         <ul className="nearby-contct">
-                          <li>
+                          {/* _____________ */}
+                          {data.filter(function(ele) {
+                    // لحتى ما اطبع المستخد اللي عامل تسجيل دخول
+                    if (ele.user_id === current_ID) {
+                        return false; // skip
+                    }
+                    return true;
+                    }).map((ele,index)=>(
+                          <li key={index}>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group1.jpg" alt="" /></a>
+                                <a href="time-line.html" title><img src={require(`../image/${ele.group_image}`)} alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>funparty</a></h4>
-                                <span>public group</span>
+                                <h4><a href="time-line.html" title>{ele.name}</a></h4>
+                                <span> <a href={`/singleGroup/${ele.group_id}/show`}> Show Group </a></span>
                                 <em>32k Members</em>
-                                <a href="#" title className="add-butn" data-ripple>join now</a>
+
+
+                          
+                                {(() => {
+                            if (pendingMembers.includes(ele.group_id) || acceptedMembers.includes(ele.group_id) ){
+                                if(pendingMembers.includes(ele.group_id)){
+                                  return ( 
+                                          <p  title onClick={()=>removeRequest(ele.group_id)} className="add-butn" data-ripple>remove request</p> 
+
+                                      
+                                      )
+
+                                }
+                                if(acceptedMembers.includes(ele.group_id)){
+                                    return (
+                                        <p onClick={()=>removeRequest(ele.group_id)} title className="add-butn" data-ripple>join now</p>
+
+                
+
+                                    
+                                                )
+
+                                }
+                              
+                             
+                            }else{
+                              return ( 
+                                        <p title onClick={()=>AddToGroup(ele.group_id)} className="add-butn" data-ripple>join now</p>
+
+                              
+                            
+                              )
+                          }
+              
+            })()}
                               </div>
                             </div>
                           </li>
-                          <li>
-                            <div className="nearly-pepls">
-                              <figure>
-                                <a href="time-line.html" title><img src="images/resources/group2.jpg" alt="" /></a>
-                              </figure>
-                              <div className="pepl-info">
-                                <h4><a href="time-line.html" title>ABC News</a></h4>
-                                <span>Private group</span>
-                                <em>5M Members</em>
-                                <a href="#" title className="add-butn" data-ripple>join now</a>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="nearly-pepls">
-                              <figure>
-                                <a href="time-line.html" title><img src="images/resources/group3.jpg" alt="" /></a>
-                              </figure>
-                              <div className="pepl-info">
-                                <h4><a href="time-line.html" title>SEO Zone</a></h4>
-                                <span>Public group</span>
-                                <em>32k Members</em>
-                                <a href="#" title className="add-butn" data-ripple>join now</a>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="nearly-pepls">
-                              <figure>
-                                <a href="time-line.html" title><img src="images/resources/group4.jpg" alt="" /></a>
-                              </figure>
-                              <div className="pepl-info">
-                                <h4><a href="time-line.html" title>Max Us</a></h4>
-                                <span>Public group</span>
-                                <em> 756 Members</em>
-                                <a href="#" title className="add-butn" data-ripple>join now</a>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="nearly-pepls">
-                              <figure>
-                                <a href="time-line.html" title><img src="images/resources/group5.jpg" alt="" /></a>
-                              </figure>
-                              <div className="pepl-info">
-                                <h4><a href="time-line.html" title>Banana Group</a></h4>
-                                <span>Friends Group</span>
-                                <em>32k Members</em>
-                                <a href="#" title className="add-butn" data-ripple>join now</a>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="nearly-pepls">
-                              <figure>
-                                <a href="time-line.html" title><img src="images/resources/group6.jpg" alt="" /></a>
-                              </figure>
-                              <div className="pepl-info">
-                                <h4><a href="time-line.html" title>Bad boys n Girls</a></h4>
-                                <span>Public group</span>
-                                <em>32k Members</em>
-                                <a href="#" title className="add-butn" data-ripple>join now</a>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="nearly-pepls">
-                              <figure>
-                                <a href="time-line.html" title><img src="images/resources/group7.jpg" alt="" /></a>
-                              </figure>
-                              <div className="pepl-info">
-                                <h4><a href="time-line.html" title>bachelor's fun</a></h4>
-                                <span>Public Group</span>
-                                <em>500 Members</em>
-                                <a href="#" title className="add-butn" data-ripple>join now</a>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="nearly-pepls">
-                              <figure>
-                                <a href="time-line.html" title><img src="images/resources/group4.jpg" alt="" /></a>
-                              </figure>
-                              <div className="pepl-info">
-                                <h4><a href="time-line.html" title>Max Us</a></h4>
-                                <span>Public group</span>
-                                <em> 756 Members</em>
-                                <a href="#" title className="add-butn" data-ripple>join now</a>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="nearly-pepls">
-                              <figure>
-                                <a href="time-line.html" title><img src="images/resources/group3.jpg" alt="" /></a>
-                              </figure>
-                              <div className="pepl-info">
-                                <h4><a href="time-line.html" title>SEO Zone</a></h4>
-                                <span>Public group</span>
-                                <em>32k Members</em>
-                                <a href="#" title className="add-butn" data-ripple>join now</a>
-                              </div>
-                            </div>
-                          </li>
+
+
+
+))}
+                          {/* __________________ */}
+                        
+
                         </ul>
                       </div>{/* photos */}
                     </div>{/* centerl meta */}
                 
-                    <Rightbar2/>    {/* sidebar */}
+                    <RightBarcreateGrope/>    {/* sidebar */}
                   </div>	
                 </div>
               </div>
@@ -170,4 +228,4 @@ const Groups = () => {
     );
 }
 
-export default Groups;
+export default Groups

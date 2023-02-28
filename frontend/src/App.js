@@ -17,16 +17,19 @@ function App() {
   return (
     <Routes>
     <Route path="/home" element={ <Home/> } />
-    <Route path="/users" element={ <Users/> } />
-    <Route path="/friends" element={ <Friends/> } />
+    <Route path="/Allusers" element={ <Users/> } />
     <Route path="/" element={ <Login/> } />
     <Route path="/register" element={ <Register/> } />
     <Route path="/groups" element={<Groups/>}/>
-    <Route path="/singleGroup" element={<SingleGroup/>}/>
+    <Route path="/singleGroup/:id/show" element={<SingleGroup/>}/>
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/editProfile" element={<EditProfile/>}/>
     <Route path="/createGroup" element={<CreateGroup/>}/>
+
+    <Route path="/friends" element={ <Friends/> } />
+
     <Route path="/nav" element={<Nav/>}/>
+
 
   </Routes>
   );
