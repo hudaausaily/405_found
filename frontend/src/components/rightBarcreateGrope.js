@@ -1,14 +1,15 @@
 import React from 'react';
 
-const Rightbar2 = () => {
+const RightBarcreateGrope = () => {
     return (
         
                          <div className="col-lg-3">
                               <aside className="sidebar static">
                               <div className="add-btn" >
-                              <a href="#" title data-ripple style={{width:'100%', textAlign:'center'}}>Create New Group</a>
+
+                              <a href="/createGroup" title data-ripple style={{width:'100%', textAlign:'center'}}>Create New Group</a>
                               </div><br></br>
-                                <div className="widget">
+                                {/* <div className="widget">
                                   <div className="banner medium-opacity bluesh">
                                     <div className="bg-image" style={{backgroundImage: 'url(images/resources/baner-widgetbg.jpg)'}} />
                                     <div className="baner-top">
@@ -181,10 +182,10 @@ const Rightbar2 = () => {
                                       </form>
                                     </div>
                                   </div>
-                                </div>{/* friends list sidebar */}
+                                </div> */}
                               </aside>
                             </div>
     );
 }
 
-export default Rightbar2;
+export default RightBarcreateGrope;

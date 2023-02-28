@@ -2,6 +2,9 @@
 
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_error',1);
+
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Headers:*');
 header('Access-Control-Allow-Methods:*');
@@ -10,6 +13,14 @@ header('Access-Control-Allow-Origin:*');
 $object = new crud;
 $conn = $object->connect();
 
+
+// to check success connect
+// var_dump($conn); 
+// print_r($_POST);
+
+//preivewلحتى يطبع في ال 
+// print_r(file_get_contents('php://input'));
+=======
 
 
 
@@ -46,12 +57,14 @@ switch($method){
 
     case "POST":
         $user = json_decode(file_get_contents('php://input'));
-        $sql = "INSERT INTO users ( id , fullName , email ,phone, password , created_at) VALUES ( null , :fullName, :email , :phone, :password , :created_at)";
+
+        $sql = "INSERT INTO users ( id , name , email ,phone, password , created_at) VALUES ( null , :name, :email , :mobile,:password,:created_at)";
         $stmt =$conn->prepare($sql);
         $created_at = date('Y-m-d');
-        $stmt->bindParam(':fullName', $user->fullName);
+        $stmt->bindParam(':name', $user->name);
         $stmt->bindParam(':email', $user->email);
-        $stmt->bindParam(':phone', $user->phone);
+        $stmt->bindParam(':mobile', $user->phone);
+
         $stmt->bindParam(':password', $user->password);
         $stmt->bindParam(':created_at', $created_at);
         if($stmt->execute()){
@@ -115,4 +128,6 @@ switch($method){
 
 
 }
+
 ?>
+
