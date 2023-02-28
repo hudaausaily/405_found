@@ -19,21 +19,23 @@ const Navbar = () => {
             <div className="top-area">
                
                     
-                    
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon" />
+          </button>
                 <ul className="setting-area">
                    
-                    <li><a href="newsfeed.html" title="Home" data-ripple><i className="ti-home" /></a></li>
-                    <li>
-                    <a  title="Notification" data-ripple>
+                    <li><a href="" title="Home" data-ripple><i className="ti-home" /></a></li>
+                    <li className="nav-item dropdown">
+                    <a href="#" title="Notificationnav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-ripple>
                         <i className="ti-bell" /><span>20</span>
                     </a>
-                    <div className={isActive ? 'ps-container ps-theme-default ps-active-y active' : 'dropdowns'} onClick={handleClick}>
+                    <div className="dropdowns dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <span>4 New Notifications</span>
                         <ul className="drops-menu">
                         <li>
-                            <a href="notifications.html" title>
+                            <a href="notifications.html" title >
                             <img src="images/resources/thumb-1.jpg" alt="" />
-                            <div className="mesg-meta">
+                            <div className="mesg-meta dropdown-item">
                                 <h6>sarah Loren</h6>
                                 <span>Hi, how r u dear ...?</span>
                                 <i>2 min ago</i>

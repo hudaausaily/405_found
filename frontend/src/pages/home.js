@@ -26,7 +26,7 @@ const Home = () => {
 
         const getUsers = async () => {
 
-        await axios.get(`http://localhost:80/react_project/back_end/user.php/read/${current_ID}`)
+        await axios.get(`http://localhost:80/405/back_end/user.php/read/${current_ID}`)
         .then((respone)=>{
             setUsers(respone.data[0])
           
