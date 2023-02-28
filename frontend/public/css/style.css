@@ -292,7 +292,7 @@ section {
 .gray-bg {
     float: left;
     width: 100%;
-    background: #f4f2f2;
+    background: gray;
 }
 
 [type="submit"],
@@ -556,6 +556,7 @@ header.sticky {
     z-index: -1;
 }
 
+
 .land-meta > a.folow-me:hover {
     text-shadow: 0 1px 1px #454545;
 }
@@ -644,7 +645,7 @@ header.sticky {
 /*--- topbar ---*/
 
 .topbar {
-    background: #fff;
+    background: black;
     display: block;
     height: 60px;
     padding: 0 48px;
@@ -659,6 +660,10 @@ header.sticky {
     width: 15%;
     position: relative;
     z-index: 10;
+}
+
+.logo img{
+    height: 55px;
 }
 
 .topbar > form {
@@ -723,6 +728,7 @@ header.sticky {
     transform: scale(0.7);
     vertical-align: inherit;
 }
+
 
 .form-search {
     position: absolute;
