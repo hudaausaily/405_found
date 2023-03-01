@@ -13,6 +13,10 @@ import CreateGroup from './pages/createGroup';
 import Friends from './pages/friends';
 import Nav from './components/nav';
 
+
+
+
+
 function App() {
   return (
     <Routes>

@@ -43,7 +43,7 @@ const Profile = () => {
 
 
     return (
-       <div>
+       <>
             {dataUsers.map((users,index)=>{
 
 return <div  key={index}>
@@ -113,12 +113,21 @@ return <div  key={index}>
                      </div>	
                    </section>
                     
-                     
+                     <div className="bottombar">
+                       <div className="container">
+                         <div className="row">
+                           <div className="col-md-12">
+                             <span className="copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></span>
+                             <i><img src="images/credit-cards.png" alt="" /></i>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
                    </div>
                    
                  </div>
                    })}
-       </div>
+       </>
             
     )
                   }

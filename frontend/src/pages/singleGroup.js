@@ -10,7 +10,13 @@ import { useState , useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import {  useParams} from "react-router-dom";
 
+
 import FeedGroup from '../components/singleGroup/feedGroup';
+import'../css/style.css';
+import '../css/color.css';
+import '../css/main.min.css';
+import '../css/responsive.css';
+import '../css/addedStyle.css';
 
 const SingleGroup = () => {
    
@@ -517,8 +523,9 @@ let flag = false;
         )})}
           </div>
     );
-  
+
    
 }
+
 
 export default SingleGroup;

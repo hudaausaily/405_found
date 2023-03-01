@@ -1,0 +1,56 @@
+textarea{
+  resize: none;
+}
+.inputMargin{
+  margin-bottom:-10px;
+}
+.logoreg{
+  margin-top: 30px;
+}
+.black{
+  background-color: black;
+}
+.red{
+  background-color: brown;
+  border: brown;
+}
+.redtext{
+color: brown;
+}
+.logoreg img{
+height: 200px;
+}
+.dropdown-menu{
+left: 0;
+
+}
+
+.sideLink{
+color: white;
+}
+
+.dropdown-toggle::after {
+display: none;
+
+  }
+  
+.sideLink:hover {
+color:white !important;
+text-decoration: none !important;
+}
+.sideLink:active{
+color: white !important;
+}
+.sideIcons{
+color: white !important;
+margin-right: 5px;
+margin-bottom: -7px;
+height: 25px;
+}
+.sideIcons:hover{
+color:white !important;
+text-decoration: none !important;
+}
+.sideIcons:active{
+color: white !important;
+}
