@@ -1,6 +1,8 @@
 import React from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import { AiFillEdit } from 'react-icons/ai';
+import SweetAlert from 'react-bootstrap-sweetalert';
+
 
 const Post1 = () => {
     return (
@@ -11,10 +13,10 @@ const Post1 = () => {
               <img src="images/resources/friend-avatar10.jpg" alt="" />
             </figure>
             <div className="friend-name">
-              <ins><a stylehref="time-line.html" title>Janice Griffith</a></ins> 
+              <ins><a stylehref="time-line.html" >Janice Griffith</a></ins> 
               <span>published: june,2 2018 19:PM</span> 
             </div>
-            <span><AiFillEdit className='icons'/><MdDeleteForever className='icons' style={{color:'red'}}/></span>
+            <span><AiFillEdit className='icons'/><MdDeleteForever className='icons redtext' /></span>
             <div className="post-meta">
               <img src="images/resources/user-post.jpg" alt="" />
               <div className="we-video-info">
@@ -47,30 +49,30 @@ const Post1 = () => {
                     <div className="menu">
                       <div className="btn trigger"><i className="fa fa-share-alt" /></div>
                       <div className="rotater">
-                        <div className="btn btn-icon"><a href="#" title><i className="fa fa-html5" /></a></div>
+                        <div className="btn btn-icon"><a href="#" ><i className="fa fa-html5" /></a></div>
                       </div>
                       <div className="rotater">
-                        <div className="btn btn-icon"><a href="#" title><i className="fa fa-facebook" /></a></div>
+                        <div className="btn btn-icon"><a href="#" ><i className="fa fa-facebook" /></a></div>
                       </div>
                       <div className="rotater">
-                        <div className="btn btn-icon"><a href="#" title><i className="fa fa-google-plus" /></a></div>
+                        <div className="btn btn-icon"><a href="#" ><i className="fa fa-google-plus" /></a></div>
                       </div>
                       <div className="rotater">
-                        <div className="btn btn-icon"><a href="#" title><i className="fa fa-twitter" /></a></div>
+                        <div className="btn btn-icon"><a href="#" ><i className="fa fa-twitter" /></a></div>
                       </div>
                       <div className="rotater">
-                        <div className="btn btn-icon"><a href="#" title><i className="fa fa-css3" /></a></div>
+                        <div className="btn btn-icon"><a href="#" ><i className="fa fa-css3" /></a></div>
                       </div>
                       <div className="rotater">
-                        <div className="btn btn-icon"><a href="#" title><i className="fa fa-instagram" /></a>
+                        <div className="btn btn-icon"><a href="#" ><i className="fa fa-instagram" /></a>
                         </div>
                       </div>
                       <div className="rotater">
-                        <div className="btn btn-icon"><a href="#" title><i className="fa fa-dribbble" /></a>
+                        <div className="btn btn-icon"><a href="#" ><i className="fa fa-dribbble" /></a>
                         </div>
                       </div>
                       <div className="rotater">
-                        <div className="btn btn-icon"><a href="#" title><i className="fa fa-pinterest" /></a>
+                        <div className="btn btn-icon"><a href="#" ><i className="fa fa-pinterest" /></a>
                         </div>
                       </div>
                     </div>
@@ -79,7 +81,7 @@ const Post1 = () => {
               </div>
               <div className="description">
                 <p>
-                  World's most beautiful car in Curabitur <a href="#" title>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
+                  World's most beautiful car in Curabitur <a href="#" >#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
                 </p>
               </div>
             </div>
@@ -94,7 +96,7 @@ const Post1 = () => {
                 </div>
                 <div className="we-comment">
                   <div className="coment-head">
-                    <h5><a href="time-line.html" title>Donald Trump</a></h5>
+                    <h5><a href="time-line.html" >Donald Trump</a></h5>
                     <span>1 week ago</span>
                     <a className="we-reply" href="#" title="Reply"><i className="fa fa-reply" /></a>
                   </div>

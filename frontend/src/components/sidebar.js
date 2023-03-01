@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {AiFillHome} from "react-icons/ai"
+import {CgProfile} from "react-icons/cg"
+import {MdOutlineGroups} from "react-icons/md"
+import {AiOutlineUserSwitch} from "react-icons/ai"
+import {AiOutlineLogout} from "react-icons/ai"
 
 const Sidebar = () => {
   const current_ID = JSON.parse(localStorage.getItem("id"));
@@ -15,7 +20,7 @@ const Sidebar = () => {
 
   function getGroups() {
     axios
-      .get(`http://localhost:80/405_found/back_end/groups.php/`)
+      .get(`http://localhost:80/405found/backend/groups.php/`)
       .then((response) => {
         console.log(response.data);
         setGroups(response.data);
@@ -25,7 +30,7 @@ const Sidebar = () => {
   const getMyAcceptrdGroups = () => {
     axios
       .get(
-        `http://localhost:80/405_found/back_end/getMyGroupAcceptedStatus.php/${current_ID}`
+        `http://localhost:80/405found/backend/getMyGroupAcceptedStatus.php/${current_ID}`
       )
       .then((response) => {
         console.log(response.data);
@@ -40,34 +45,34 @@ const Sidebar = () => {
           <h4 className="widget-title">Shortcuts</h4>
           <ul className="naves">
             <li>
-              <i className="ti-clipboard" />
-              <Link to="/home" title>
+              <AiFillHome className="sideIcons"/>
+              <Link to="/home"  className="sideLink" >
                 Home
               </Link>
             </li>
             <li>
-              <i className="ti-user" />
-              <Link to="/profile" title>
+              <CgProfile className="sideIcons"/>
+              <Link to="/profile"  className="sideLink">
                 Profile
               </Link>
             </li>
             <li>
-              <i className="ti-mouse-alt" />
-              <Link to="/groups" title>
+              <MdOutlineGroups className="sideIcons"/>
+              <Link to="/groups"  className="sideLink">
                 Groups
               </Link>
             </li>
       
             <li>
-              <i className="ti-files" />
-              <Link to="/Allusers" title>
+              <AiOutlineUserSwitch className="sideIcons"/>
+              <Link to="/Allusers"  className="sideLink">
                 All Users
               </Link>
             </li>
 
             <li>
-              <i className="ti-power-off" />
-              <Link to="landing.html" title>
+              <AiOutlineLogout className="sideIcons"/>
+              <Link to="landing.html"  className="sideLink">
                 Logout
               </Link>
             </li>
@@ -93,14 +98,14 @@ const Sidebar = () => {
                 return (
                   <li key={index}>
                     <figure>
-                      <img
-                        src={require(`../image/${element.group_image}`)}
+                      {element.group_image && <img
+                        src={`../image/${element.group_image}`}
                         alt=""
-                      />
+                      />}
                     </figure>
                     <div className="friend-meta">
                       <h4>
-                        <Link to={`/groups/singleGroup/${element.group_id}/show`} title>
+                        <Link to={`/groups/singleGroup/${element.group_id}/show`}  className="sideLink">
                           {element.group_name}
                         </Link>
                       </h4>
@@ -131,14 +136,14 @@ const Sidebar = () => {
                 return (
                   <li key={index}>
                     <figure>
-                      <img
-                        src={require(`../image/${element.group_image}`)}
+                      {element.group_image && <img
+                        src={`../image/${element.group_image}`}
                         alt=""
-                      />
+                      />}
                     </figure>
                     <div className="friend-meta">
                       <h4>
-                        <Link to={`/groups/singleGroup/${element.group_id}/show`} title>
+                        <Link to={`/groups/singleGroup/${element.group_id}/show`}  className="sideLink">
                           {element.group_name}
                         </Link>
                       </h4>

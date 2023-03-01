@@ -24,3 +24,33 @@ textarea{
   left: 0;
   
  }
+
+ .sideLink{
+  color: white;
+ }
+
+ .dropdown-toggle::after {
+  display: none;
+  
+    }
+    
+  .sideLink:hover {
+color:white !important;
+text-decoration: none !important;
+}
+.sideLink:active{
+color: white !important;
+}
+.sideIcons{
+  color: white !important;
+  margin-right: 5px;
+  margin-bottom: -7px;
+  height: 25px;
+}
+.sideIcons:hover{
+  color:white !important;
+  text-decoration: none !important;
+}
+.sideIcons:active{
+  color: white !important;
+}

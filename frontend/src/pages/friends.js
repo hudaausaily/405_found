@@ -30,111 +30,111 @@ const Friends = () => {
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group1.jpg" alt="" /></a>
+                                <a href="time-line.html" ><img src="images/resources/group1.jpg" alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>funparty</a></h4>
+                                <h4><a href="time-line.html" >funparty</a></h4>
                                 
                                 
-                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
+                                <a href="#"  className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group2.jpg" alt="" /></a>
+                                <a href="time-line.html" ><img src="images/resources/group2.jpg" alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>ABC News</a></h4>
+                                <h4><a href="time-line.html" >ABC News</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
+                                <a href="#"  className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group3.jpg" alt="" /></a>
+                                <a href="time-line.html" ><img src="images/resources/group3.jpg" alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>SEO Zone</a></h4>
+                                <h4><a href="time-line.html" >SEO Zone</a></h4>
                                 
                                 
-                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
+                                <a href="#"  className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group4.jpg" alt="" /></a>
+                                <a href="time-line.html" ><img src="images/resources/group4.jpg" alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>Max Us</a></h4>
+                                <h4><a href="time-line.html" >Max Us</a></h4>
                                 
                                 
-                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
+                                <a href="#"  className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group5.jpg" alt="" /></a>
+                                <a href="time-line.html" ><img src="images/resources/group5.jpg" alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>Banana Group</a></h4>
+                                <h4><a href="time-line.html" >Banana Group</a></h4>
                                
-                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
+                                <a href="#"  className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group6.jpg" alt="" /></a>
+                                <a href="time-line.html" ><img src="images/resources/group6.jpg" alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>Bad boys n Girls</a></h4>
+                                <h4><a href="time-line.html" >Bad boys n Girls</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
+                                <a href="#"  className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group7.jpg" alt="" /></a>
+                                <a href="time-line.html" ><img src="images/resources/group7.jpg" alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>bachelor's fun</a></h4>
+                                <h4><a href="time-line.html" >bachelor's fun</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
+                                <a href="#"  className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group4.jpg" alt="" /></a>
+                                <a href="time-line.html"  ><img src="images/resources/group4.jpg" alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>Max Us</a></h4>
+                                <h4><a href="time-line.html"  >Max Us</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
+                                <a href="#"   className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src="images/resources/group3.jpg" alt="" /></a>
+                                <a href="time-line.html"  ><img src="images/resources/group3.jpg" alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>SEO Zone</a></h4>
+                                <h4><a href="time-line.html"  >SEO Zone</a></h4>
                                 
-                                <a href="#" title className="add-butn" data-ripple>unfriend</a>
+                                <a href="#"   className="add-butn" data-ripple>unfriend</a>
                               </div>
                             </div>
                           </li>

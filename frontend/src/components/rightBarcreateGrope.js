@@ -7,7 +7,7 @@ const RightBarcreateGrope = () => {
                               <aside className="sidebar static">
                               <div className="add-btn" >
 
-                              <a href="/createGroup" title data-ripple style={{width:'100%', textAlign:'center'}}>Create New Group</a>
+                              <a href="/createGroup"  data-ripple style={{width:'100%', textAlign:'center'}}>Create New Group</a>
                               </div><br></br>
                                 {/* <div className="widget">
                                   <div className="banner medium-opacity bluesh">

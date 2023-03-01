@@ -29,7 +29,7 @@ useEffect(()=>{
 
 
 function getUsers(){
-    axios.get(`http://localhost:80/405_found/back_end/getAllFriendsUser.php/${profile_id}`)
+    axios.get(`http://localhost:80/405found/backend/getAllFriendsUser.php/${profile_id}`)
     .then(response => {
       console.log(response.data);
         setUsers(response.data);
@@ -38,7 +38,7 @@ function getUsers(){
   
   const getDataUsers = () => {
 
-    axios.get(`http://localhost:80/405_found/back_end/user.php/users/${current_ID}`)
+    axios.get(`http://localhost:80/405found/backend/user.php/users/${current_ID}`)
     .then((respone)=>{
       setDataUsers(respone.data[0])
         console.log(respone.data[0]);
@@ -67,7 +67,7 @@ function getUsers(){
     
     const getFriendsAccepted = () => {
 
-      axios.get(`http://localhost:80/405_found/back_end/friends.php/${id}`)
+      axios.get(`http://localhost:80/405found/backend/friends.php/${id}`)
       .then((respone)=>{
           console.log(respone.data);
           let friends = respone.data.map((ele)=>{
@@ -101,7 +101,7 @@ function getUsers(){
                                         create your own favourit page.
                                       </p>
                                       <span>like them all</span>
-                                      <a data-ripple title href="#">start now!</a>
+                                      <a data-ripple  href="#">start now!</a>
                                     </div>
                                   </div>											
                                 </div>
@@ -119,7 +119,7 @@ function getUsers(){
                                         <span className="status f-online" />
                                       </figure>
                                       <div className="friendz-meta">
-                                        <a href="time-line.html">{ele.name}</a>
+                                        <a href="time-line.html" className="sideLink">{ele.name}</a>
                                       </div>
                                     </li>
 

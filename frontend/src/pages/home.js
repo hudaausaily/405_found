@@ -4,7 +4,7 @@ import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import SweetAlert from 'react-bootstrap-sweetalert';
 import Post1 from '../components/post1';
 
 
@@ -26,7 +26,7 @@ const Home = () => {
 
         const getUsers = async () => {
 
-        await axios.get(`http://localhost:80/405/back_end/user.php/read/${current_ID}`)
+        await axios.get(`http://localhost:80/405found/backend/user.php/${current_ID}`)
         .then((respone)=>{
             setUsers(respone.data[0])
           
@@ -45,9 +45,10 @@ const Home = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:80/405_found/back_end/posts.php", formData
+          "http://localhost:80/405found/backend/posts.php", formData
         );
         console.log(response.data);
+
         window.location.assign('/home');
       } catch (error) {
         console.error(error);
@@ -97,7 +98,7 @@ const Home = () => {
                                           </li> */}
                                         
                                           <li>
-                                            <button type="submit">Post</button>
+                                            <button type="submit" className='red'>Post</button>
                                           </li>
                                         </ul>
                                       </div>

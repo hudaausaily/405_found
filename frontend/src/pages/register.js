@@ -40,7 +40,7 @@ export default class Register extends Component {
           console.log(this.users);
         }
         componentDidMount = () =>{
-          axios.get("http://localhost:80/405_found/back_end/user.php/users/")
+          axios.get("http://localhost:80/405found/backend/user.php/users/")
           .then((respone)=>{
             let email = respone.data.map((ele) => {
                   return ele.email
@@ -141,7 +141,7 @@ export default class Register extends Component {
             // let newUser ={name:this.state.name,email:this.state.email,password:this.state.password}
             // this.users.push(newUser);
             let inputs = {name:this.state.name,email:this.state.email,phone:this.state.phone,password:this.state.password}
-            axios.post("http://localhost:80/405_found/back_end/user.php/save",inputs)
+            axios.post("http://localhost:80/405found/backend/user.php/save",inputs)
             .then((respone)=>{
                 console.log(respone.data);
                 window.location.assign('/');

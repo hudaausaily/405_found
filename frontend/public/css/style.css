@@ -292,7 +292,7 @@ section {
 .gray-bg {
     float: left;
     width: 100%;
-    background: gray;
+    background: rgb(69, 69, 69);
 }
 
 [type="submit"],
@@ -645,7 +645,7 @@ header.sticky {
 /*--- topbar ---*/
 
 .topbar {
-    background: black;
+    background: brown;
     display: block;
     height: 60px;
     padding: 0 48px;
@@ -1160,8 +1160,8 @@ header.sticky {
     position: relative;
     width: 100%;
     margin-bottom: 30px;
-    background: #fdfdfd;
-    border: 1px solid #ede9e9;
+    background: gray;
+    border: 1px solid gray;
     border-radius: 3px;
 }
 
@@ -1179,7 +1179,7 @@ header.sticky {
 
 .sidebar .widget-title {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    color: #424242;
+    color: white;
     display: inline-block;
     font-size: 15px;
     font-weight: bold;
@@ -1197,6 +1197,7 @@ header.sticky {
     left: 20px;
     position: absolute;
     width: 20%;
+    background: brown !important;
 }
 
 .sidebar .widget li {
@@ -1382,7 +1383,7 @@ form button {
     display: inline-block;
     padding-left: 10px;
     vertical-align: middle;
-    width: 86%;
+    width: 84%;
 }
 .icons{
     color: #000;
@@ -2166,6 +2167,8 @@ footer .widget-title h4::before {
     left: 0;
     position: absolute;
     width: 20%;
+    color: brown !important;
+
 }
 
 footer .widget-title {

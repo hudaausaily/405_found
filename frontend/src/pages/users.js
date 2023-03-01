@@ -30,7 +30,7 @@ const Users = () => {
       // لعرض جميع المستخدمين في الموقع
       const getUsers = () => {
 
-          axios.get("http://localhost:80/405_found/back_end/user.php/users")
+          axios.get("http://localhost:80/405found/backend/user.php/users")
           .then((respone)=>{
               setUsers(respone.data)
               console.log(respone.data);
@@ -41,7 +41,7 @@ const Users = () => {
   // اللي بعثهم المستخدم pending عرض جميع طلبات الصداقة في حالة 
   const getFriendsPending = () => {
 
-      axios.get(`http://localhost:80/405_found/back_end/acceptFriend.php/${id}`)
+      axios.get(`http://localhost:80/405found/backend/acceptFriend.php/${id}`)
       .then((respone)=>{
           console.log(respone.data);
           let pendingRequest = respone.data.map((ele)=>{
@@ -57,7 +57,7 @@ const Users = () => {
   
   const getFriendsAccepted = () => {
 
-      axios.get(`http://localhost:80/405_found/back_end/friends.php/${id}`)
+      axios.get(`http://localhost:80/405found/backend/friends.php/${id}`)
       .then((respone)=>{
           console.log(respone.data);
           let friends = respone.data.map((ele)=>{
@@ -73,7 +73,7 @@ const Users = () => {
 
       const getFriendsRequest = () => {
 
-          axios.get(`http://localhost:80/405_found/back_end/friendRequests.php/${id}`)
+          axios.get(`http://localhost:80/405found/backend/friendRequests.php/${id}`)
           .then((respone)=>{
               console.log(respone.data);
               let requestFriend = respone.data.map((ele)=>{
@@ -89,7 +89,7 @@ const Users = () => {
   //  pending وحالته بتكون friends  اضافة صديق جديد في جدول ال 
   const AddFriends = (friendId) => {
       let inputs = {user_id:id , friend_id:friendId};
-      axios.post(`http://localhost:80/405_found/back_end/friends.php/save`,inputs)
+      axios.post(`http://localhost:80/405found/backend/friends.php/save`,inputs)
       .then((respone)=>{
           console.log(respone.data);
           getUsers();
@@ -105,7 +105,7 @@ const Users = () => {
   // status الموافقة على طلب الصداقة وتغيير ال 
   const AcceptFriend = (friendId) => {
       let inputs = {user_id:id , friend_id:friendId};
-      axios.put(`http://localhost:80/405_found/back_end/friends.php/edit`,inputs)
+      axios.put(`http://localhost:80/405found/backend/friends.php/edit`,inputs)
       .then((respone)=>{
           console.log(respone.data);
           getFriendsPending();
@@ -121,7 +121,7 @@ const Users = () => {
   // الغاء ارسال طلب الصداقة
   const removeRequest = (friendId) => {
       let inputs = {user_id:id , friend_id:friendId};
-      axios.put(`http://localhost:80/405_found/back_end/removeRequest.php/edit`,inputs)
+      axios.put(`http://localhost:80/405found/backend/removeRequest.php/edit`,inputs)
       .then((respone)=>{
           console.log(respone.data);
           getFriendsPending();
@@ -135,7 +135,7 @@ const Users = () => {
   // حذف الصداقة
   const removeFriend = (friendId) => {
       let inputs = {user_id:id , friend_id:friendId};
-      axios.put(`http://localhost:80/405_found/back_end/removeFriends.php`,inputs)
+      axios.put(`http://localhost:80/405found/backend/removeFriends.php`,inputs)
       .then((respone)=>{
           console.log(respone.data);
           getFriendsPending();
@@ -186,13 +186,13 @@ const Users = () => {
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src={require(`../image/${ele.image}`)} alt="" /></a>
+                                <a href="time-line.html"  ><img src={require(`../image/${ele.image}`)} alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>{ele.name}</a></h4>
-                                <h6><a href="time-line.html" title>  {ele.email}  </a></h6>
+                                <h4><a href="time-line.html"  >{ele.name}</a></h4>
+                                <h6><a href="time-line.html"  >  {ele.email}  </a></h6>
                                 {/* ____________________ */}
-                                {/* <a href="#" title className="add-butn" data-ripple>add friend</a> */}
+                                {/* <a href="#"   className="add-butn" data-ripple>add friend</a> */}
                                 {(() => {
                             if (pendingRequest.includes(ele.id) || friends.includes(ele.id) || requestFriend.includes(ele.id)){
                                 if(pendingRequest.includes(ele.id)){

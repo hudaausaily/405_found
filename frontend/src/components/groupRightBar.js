@@ -8,10 +8,10 @@ const GroupRightBar = () => {
             <h4 className="widget-title">Group Admin</h4>	
             <div className="your-page">
               <figure>
-                <a href="#" title><img src="images/resources/friend-avatar9.jpg" alt="" /></a>
+                <a href="#" ><img src="images/resources/friend-avatar9.jpg" alt="" /></a>
               </figure>
               <div className="page-meta">
-                <a href="#" title className="underline">Admin Name</a>
+                <a href="#"  className="underline">Admin Name</a>
                 
              
               

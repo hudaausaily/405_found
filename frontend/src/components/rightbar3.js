@@ -6,7 +6,7 @@ const Rightbar3 = () => {
                          <div className="col-lg-3">
                               <aside className="sidebar static">
                               <div className="add-btn" >
-                              <a href="#" title data-ripple style={{width:'100%', textAlign:'center'}}>Add Friend</a>
+                              <a href="#"  data-ripple style={{width:'100%', textAlign:'center'}}>Add Friend</a>
                               </div><br></br>
                                 <div className="widget">
                                   <div className="banner medium-opacity bluesh">
@@ -20,7 +20,7 @@ const Rightbar3 = () => {
                                         create your own favourit page.
                                       </p>
                                       <span>like them all</span>
-                                      <a data-ripple title href="#">start now!</a>
+                                      <a data-ripple  href="#">start now!</a>
                                     </div>
                                   </div>											
                                 </div>

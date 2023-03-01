@@ -36,7 +36,7 @@ const EditProfile = () => {
 
 
 function getUser(){
-    axios.get(`http://localhost:80/405_found/back_end/userProfile.php/${current_ID}`)
+    axios.get(`http://localhost:80/405found/backend/userProfile.php/${current_ID}`)
     .then(response => {
         setUser(response.data);
     })
@@ -63,7 +63,7 @@ const handleEditUser = (e) => {
   
     try {
       const response = await axios.post(
-        `http://localhost:80/405_found/back_end/editUserProfile.php/${current_ID}`, formEditData
+        `http://localhost:80/405found/backend/editUserProfile.php/${current_ID}`, formEditData
       );
       console.log(response.data);
       // window.location.assign(`/profile`);
@@ -76,13 +76,13 @@ const handleEditUser = (e) => {
 
     return (
 
-    <>
+    <div>
 
         <div className="theme-layout">
         <Navbar/>
         {user.map((Oneuser)=>{
                                 return( 
-        <>
+        <div>
             <section>
               <div className="feature-photo">
                 <figure><img src="images/resources/timeline-1.jpg" alt="" /></figure>
@@ -121,13 +121,13 @@ const handleEditUser = (e) => {
                             <span>@{Oneuser.name}</span>
                           </li>
                           <li>
-                            <a className="active" href="time-line.html" title data-ripple>time line</a>
-                            <a className href="timeline-photos.html" title data-ripple>Photos</a>
-                            <a className href="timeline-videos.html" title data-ripple>Videos</a>
-                            <a className href="timeline-friends.html" title data-ripple>Friends</a>
-                            <a className href="timeline-groups.html" title data-ripple>Groups</a>
-                            <a className href="about.html" title data-ripple>about</a>
-                            <a className href="#" title data-ripple>more</a>
+                            <a className="active" href="time-line.html"  data-ripple>time line</a>
+                            <a className href="timeline-photos.html"  data-ripple>Photos</a>
+                            <a className href="timeline-videos.html"  data-ripple>Videos</a>
+                            <a className href="timeline-friends.html"  data-ripple>Friends</a>
+                            <a className href="timeline-groups.html"  data-ripple>Groups</a>
+                            <a className href="about.html"  data-ripple>about</a>
+                            <a className href="#"  data-ripple>more</a>
                           </li>
                         </ul>
                       </div>
@@ -185,7 +185,7 @@ const handleEditUser = (e) => {
               </div>
             </div>	
           </section>
-        </>
+        </div>
            )
                         })}
           <div className="bottombar">
@@ -199,7 +199,7 @@ const handleEditUser = (e) => {
             </div>
           </div>
         </div>
-    </>
+    </div>
     );
 }
 

@@ -25,7 +25,7 @@ const Groups = () => {
 
   const getGroups =()=>{
       
-      axios.get("http://localhost/405_found/back_end/groups.php")
+      axios.get("http://localhost/405found/backend/groups.php")
     
       .then((res)=>{
           console.log(res.data)
@@ -37,7 +37,7 @@ const Groups = () => {
 // لاضافة عضو لجروب معين
 const AddToGroup = (groupId) => {
 let inputs = {user_id:current_ID , group_id:groupId};
-axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs)
+axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
 .then((respone)=>{
     console.log(respone.data);
     getGroups();
@@ -49,7 +49,7 @@ axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs
    //للجروبات pending لعرض كل طلبات المستخدم اللي حالتهم 
   const getPendingMempers = () => {
 
-      axios.get(`http://localhost:80/405_found/back_end/getPendingMember.php/${current_ID}`)
+      axios.get(`http://localhost:80/405found/backend/getPendingMember.php/${current_ID}`)
       .then((respone)=>{
           console.log(respone.data);
           let pendingMembers = respone.data.map((ele)=>{
@@ -79,7 +79,7 @@ axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs
 // لحذب طلب الاضافة 
   const removeRequest = (GroupId) => {
     let inputs = {user_id:current_ID , group_id:GroupId};
-    axios.put(`http://localhost:80/405_found/back_end/getPendingMember.php/edit`,inputs)
+    axios.put(`http://localhost:80/405found/backend/getPendingMember.php/edit`,inputs)
     .then((respone)=>{
         console.log(respone.data);
         getGroups();
@@ -124,10 +124,10 @@ axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs
                           <li key={index}>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html" title><img src={require(`../image/${ele.group_image}`)} alt="" /></a>
+                                <a href="time-line.html"  ><img src={require(`../image/${ele.group_image}`)} alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>{ele.group_name}</a></h4>
+                                <h4><a href="time-line.html"  >{ele.group_name}</a></h4>
                                 <span> <Link to={`/groups/singleGroup/${ele.group_id}/show`}> Show Group </Link></span>
                                 <em>32k Members</em>
 
@@ -137,7 +137,7 @@ axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs
                             if (pendingMembers.includes(ele.group_id) || acceptedMembers.includes(ele.group_id) ){
                                 if(pendingMembers.includes(ele.group_id)){
                                   return ( 
-                                          <button  title onClick={()=>removeRequest(ele.group_id)} className="add-butn" data-ripple>remove request</button> 
+                                          <button    onClick={()=>removeRequest(ele.group_id)} className="add-butn" data-ripple>remove request</button> 
 
                                       
                                       )
@@ -145,7 +145,7 @@ axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs
                                 }
                                 if(acceptedMembers.includes(ele.group_id)){
                                     return (
-                                        <button onClick={()=>removeRequest(ele.group_id)} title className="add-butn" data-ripple>join now</button>
+                                        <button onClick={()=>removeRequest(ele.group_id)}   className="add-butn" data-ripple>join now</button>
 
                 
 
@@ -157,7 +157,7 @@ axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs
                              
                             }else{
                               return ( 
-                                        <button title onClick={()=>AddToGroup(ele.group_id)} className="add-butn" data-ripple>join now</button>
+                                        <button   onClick={()=>AddToGroup(ele.group_id)} className="add-butn" data-ripple>join now</button>
 
                               
                             

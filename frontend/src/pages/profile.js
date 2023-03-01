@@ -31,7 +31,7 @@ const Profile = () => {
   // لعرض  بيانات المستخدم في الموقع
   const getDataUsers = () => {
 
-    axios.get(`http://localhost:80/405_found/back_end/user.php/users/${current_ID}`)
+    axios.get(`http://localhost:80/405found/backend/user.php/users/${current_ID}`)
     .then((respone)=>{
       setDataUsers(respone.data)
         console.log(respone.data);
@@ -42,7 +42,7 @@ const Profile = () => {
 
 
     return (
-       <>
+       <div>
             {dataUsers.map((users,index)=>{
 
 return <div  key={index}>
@@ -54,7 +54,7 @@ return <div  key={index}>
                          <div className="add-btn">
                            <span>1205 friends</span>
                            
-                           <Link to={`/profile/editProfile/${users.id}/edit`} title data-ripple>Edit Profile</Link>
+                           <Link to={`/profile/editProfile/${users.id}/edit`}   data-ripple>Edit Profile</Link>
                          </div>
                          <form className="edit-phto">
                            <i className="fa fa-camera-retro" />
@@ -71,7 +71,7 @@ return <div  key={index}>
                                    <img src={require(`../image/${users.image}`)} alt="" />
                                    <form className="edit-phto">
                                      <i className="fa fa-camera-retro" />
-                                     <Link to={`/profile/editProfile/${users.id}/edit`} title data-ripple>Edit Profile</Link>
+                                     <Link to={`/profile/editProfile/${users.id}/edit`}   data-ripple>Edit Profile</Link>
                                    </form>
                                  </figure>
                                </div>
@@ -84,10 +84,10 @@ return <div  key={index}>
                                      <span>@{users.name}</span>
                                    </li>
                                    <li>
-                                     <a className="active" href="time-line.html" title data-ripple>time line</a>
-                                     <a className href="timeline-friends.html" title data-ripple>Friends</a>
-                                     <a className href="timeline-groups.html" title data-ripple>Groups</a>
-                                     <a className href="about.html" title data-ripple>about</a>
+                                     <a className="active" href="time-line.html"   data-ripple>time line</a>
+                                     <a className href="timeline-friends.html"   data-ripple>Friends</a>
+                                     <a className href="timeline-groups.html"   data-ripple>Groups</a>
+                                     <a className href="about.html"   data-ripple>about</a>
                                    </li>
                                  </ul>
                                </div>
@@ -158,7 +158,7 @@ return <div  key={index}>
                                            <img src="images/resources/friend-avatar10.jpg" alt="" />
                                          </figure>
                                          <div className="friend-name">
-                                           <ins><a href="time-line.html" title>Janice Griffith</a></ins>
+                                           <ins><a href="time-line.html"  >Janice Griffith</a></ins>
                                            <span>published: june,2 2018 19:PM</span>
                                          </div>
                                          <span><AiFillEdit className='icons'/><MdDeleteForever className='icons' style={{color:'red'}}/></span>
@@ -195,7 +195,7 @@ return <div  key={index}>
                                            </div>
                                            <div className="description">
                                              <p>
-                                               World's most beautiful car in Curabitur <a href="#" title>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
+                                               World's most beautiful car in Curabitur <a href="#"  >#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
                                              </p>
                                            </div>
                                          </div>
@@ -210,7 +210,7 @@ return <div  key={index}>
                                              </div>
                                              <div className="we-comment">
                                                <div className="coment-head">
-                                                 <h5><a href="time-line.html" title>Donald Trump</a></h5>
+                                                 <h5><a href="time-line.html"  >Donald Trump</a></h5>
                                                  <span>1 week ago</span>
                                                  <a className="we-reply" href="#" title="Reply"><i className="fa fa-reply" /></a>
                                                </div>
@@ -281,7 +281,7 @@ return <div  key={index}>
                    
                  </div>
                    })}
-       </>
+       </div>
             
     )
                   }

@@ -21,7 +21,7 @@ const handleSubmit = async (e) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:80/405_found/back_end/groups.php",
+        "http://localhost:80/405found/backend/groups.php",
         formData
       );
       console.log(response.data);

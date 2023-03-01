@@ -47,7 +47,7 @@ const SingleGroup = () => {
 
 const getMyAcceptrdGroups = () => {
 
-  axios.get(`http://localhost:80/405_found/back_end/getMyGroupAcceptedStatus.php/${current_ID}`)
+  axios.get(`http://localhost:80/405found/backend/getMyGroupAcceptedStatus.php/${current_ID}`)
   .then(response => {
       console.log(response.data)
       let myAcceptedGroups = response.data.map((ele)=>{
@@ -63,7 +63,7 @@ const getMyAcceptrdGroups = () => {
 }
 const getDataGroups = () => {
 
-  axios.get(`http://localhost:80/405_found/back_end/getDataGroups.php/${id}`)
+  axios.get(`http://localhost:80/405found/backend/getDataGroups.php/${id}`)
   .then(response => {
       console.log(response.data)
       setGroups(response.data);
@@ -72,7 +72,7 @@ const getDataGroups = () => {
 
 const getUsersGroup = () => {
 
-  axios.get(`http://localhost:80/405_found/back_end/getUsersGroup.php/${id}`)
+  axios.get(`http://localhost:80/405found/backend/getUsersGroup.php/${id}`)
   .then(response => {
       console.log(response.data)
       setUserGroups(response.data);
@@ -81,7 +81,7 @@ const getUsersGroup = () => {
 }
 
 const getPendingRequest = () => {
-  axios.get(`http://localhost:80/405_found/back_end/getPendingRequestForGroup.php/${id}`)
+  axios.get(`http://localhost:80/405found/backend/getPendingRequestForGroup.php/${id}`)
   .then((respone)=>{
       console.log(respone.data);
     
@@ -94,7 +94,7 @@ const getPendingRequest = () => {
 const deleteFromGroup = (userId) => {
 
   let inputs = {user_id:userId , group_id:id};
-  axios.put(`http://localhost:80/405_found/back_end/deleteRequestForGroup.php`,inputs)
+  axios.put(`http://localhost:80/405found/backend/deleteRequestForGroup.php`,inputs)
   .then((respone)=>{
       console.log(respone.data);
       getDataGroups();
@@ -109,7 +109,7 @@ const deleteFromGroup = (userId) => {
 const deleteRequest = (userId) => {
 
   let inputs = {user_id:userId , group_id:id};
-  axios.put(`http://localhost:80/405_found/back_end/deleteRequestForGroup.php`,inputs)
+  axios.put(`http://localhost:80/405found/backend/deleteRequestForGroup.php`,inputs)
   .then((respone)=>{
       console.log(respone.data);
       getDataGroups();
@@ -123,7 +123,7 @@ const deleteRequest = (userId) => {
 const acceptRequest = (userId) => {
 
   let inputs = {user_id:userId , group_id:id};
-  axios.put(`http://localhost:80/405_found/back_end/membersGroup.php`,inputs)
+  axios.put(`http://localhost:80/405found/backend/membersGroup.php`,inputs)
   .then((respone)=>{
       console.log(respone.data);
       getDataGroups();
@@ -137,7 +137,7 @@ const acceptRequest = (userId) => {
 // لعرض كل الجروبات في الموقع
 
 function getGroups(){
-  axios.get(`http://localhost:80/405_found/back_end/groups.php/`)
+  axios.get(`http://localhost:80/405found/backend/groups.php/`)
   .then(response => {
       console.log(response.data)
       setDataGroups(response.data);
@@ -160,7 +160,7 @@ const AddToGroup = (groupId) => {
      //للجروبات pending لعرض كل طلبات المستخدم اللي حالتهم 
     const getPendingMempers = () => {
 
-        axios.get(`http://localhost:80/405_found/back_end/getPendingMember.php/${current_ID}`)
+        axios.get(`http://localhost:80/405found/backend/getPendingMember.php/${current_ID}`)
         .then((respone)=>{
             console.log(respone.data);
             let pendingMembers = respone.data.map((ele)=>{
@@ -175,7 +175,7 @@ const AddToGroup = (groupId) => {
          //للجروبات accepted لعرض كل طلبات المستخدم اللي حالتهم 
          const getAcceptedMempers = () => {
 
-          axios.get(`http://localhost:80/405_found/back_end/getAcceptedMember.php/${current_ID}`)
+          axios.get(`http://localhost:80/405found/backend/getAcceptedMember.php/${current_ID}`)
           .then((respone)=>{
               console.log(respone.data);
               let acceptedMembers = respone.data.map((ele)=>{
@@ -190,7 +190,7 @@ const AddToGroup = (groupId) => {
   // لحذب طلب الاضافة 
     const removeRequest = (GroupId) => {
       let inputs = {user_id:current_ID , group_id:GroupId};
-      axios.put(`http://localhost:80/405_found/back_end/getPendingMember.php/edit`,inputs)
+      axios.put(`http://localhost:80/405found/backend/getPendingMember.php/edit`,inputs)
       .then((respone)=>{
           console.log(respone.data);
           getGroups();
@@ -202,7 +202,7 @@ const AddToGroup = (groupId) => {
     // delete group
 
     const  deleteGroup = (id) => {
-      axios.delete(`http://localhost:80/405_found/back_end/groups.php/${id}`).then(function(response){
+      axios.delete(`http://localhost:80/405found/backend/groups.php/${id}`).then(function(response){
         window.location.assign('/')
       })
     }
@@ -214,7 +214,7 @@ const AddToGroup = (groupId) => {
 // ///////////////////////////////////////
 let flag = false;
     return (
-      <>
+      <div>
 
 {myAcceptedGroups.map((ele)=>{
                     if (ele == id) {
@@ -307,11 +307,11 @@ let flag = false;
                           <span>@{groups.group_name}</span>
                         </li>
                         <li>
-                          <a className="active" href="fav-page.html" title data-ripple>Page</a>
-                          <a className href="inbox.html" title data-ripple>inbox</a>
-                          <a className href="insights.html" title data-ripple>insights</a>
-                          <a className href="fav-page.html" title data-ripple>posts</a>
-                          <a className href="page-likers.html" title data-ripple>likers</a>
+                          <a className="active" href="fav-page.html"   data-ripple>Page</a>
+                          <a className href="inbox.html"   data-ripple>inbox</a>
+                          <a className href="insights.html"   data-ripple>insights</a>
+                          <a className href="fav-page.html"   data-ripple>posts</a>
+                          <a className href="page-likers.html"   data-ripple>likers</a>
                         </li>
                       </ul>
                     </div>
@@ -368,7 +368,7 @@ let flag = false;
                               <img src="images/resources/friend-avatar10.jpg" alt="" />
                             </figure>
                             <span className="friend-name" >
-                              <ins><a stylehref="time-line.html" title>Janice Griffith</a></ins> 
+                              <ins><a stylehref="time-line.html"  >Janice Griffith</a></ins> 
                               <span>published: june,2 2018 19:PM</span> 
                             </span>
                             <span><AiFillEdit className='icons'/><MdDeleteForever className='icons' style={{color:'red'}}/></span>
@@ -405,7 +405,7 @@ let flag = false;
                               </div>
                               <div className="description">
                                 <p>
-                                  World's most beautiful car in Curabitur <a href="#" title>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
+                                  World's most beautiful car in Curabitur <a href="#"  >#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
                                 </p>
                               </div>
                             </div>
@@ -420,7 +420,7 @@ let flag = false;
                                 </div>
                                 <div className="we-comment">
                                   <div className="coment-head">
-                                    <h5><a href="time-line.html" title>Donald Trump</a></h5>
+                                    <h5><a href="time-line.html"  >Donald Trump</a></h5>
                                     <span>1 week ago</span>
                                     <a className="we-reply" href="#" title="Reply"><i className="fa fa-reply" /></a>
                                   </div>
@@ -480,10 +480,10 @@ let flag = false;
             <h4 className="widget-title">Group Admin</h4>	
             <div className="your-page">
               <figure>
-                <a href="#" title><img  src={groups && groups.image ? require(`../image/${groups.image}`) : "https://www.example.com/example.png"} alt="vcc" /></a>
+                <a href="#"  ><img  src={groups && groups.image ? require(`../image/${groups.image}`) : "https://www.example.com/example.png"} alt="vcc" /></a>
               </figure>
               <div className="page-meta">
-                <a href="#" title className="">{groups.name}</a>
+                <a href="#"   className="">{groups.name}</a>
                 
              
               
@@ -511,7 +511,7 @@ let flag = false;
                   create your own favourite page.
                 </p>
                 <span>like them all</span>
-                <a data-ripple title href="#">start now!</a>
+                <a data-ripple   href="#">start now!</a>
               </div>
   
 
@@ -723,7 +723,7 @@ let flag = false;
           </div>
         </div>
         )})}
-          </>
+          </div>
     );
   
    
