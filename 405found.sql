@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2023 at 08:21 PM
+-- Generation Time: Mar 01, 2023 at 09:23 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -75,12 +75,8 @@ CREATE TABLE `friends` (
 --
 
 INSERT INTO `friends` (`id`, `user_id`, `friend_id`, `status`) VALUES
-(53, 2, 3, 'accepted'),
-(55, 3, 2, 'accepted'),
-(60, 4, 1, 'accepted'),
-(61, 1, 4, 'accepted'),
-(62, 4, 2, 'accepted'),
-(63, 2, 4, 'accepted');
+(64, 8, 7, 'accepted'),
+(65, 7, 8, 'accepted');
 
 -- --------------------------------------------------------
 
@@ -101,10 +97,7 @@ CREATE TABLE `groups` (
 --
 
 INSERT INTO `groups` (`group_id`, `group_name`, `group_image`, `user_id`, `status`) VALUES
-(2, 'ahmed', 'mohammad.jpg', 4, ''),
-(3, 'action', 'ea03a811caa36ef225a2d93812ba3096.jpg', 4, ''),
-(4, 'parcelona', 'kissclipart-calvin-klein-logo-clipart-t-shirt-calvin-klein-log-2cdb07f94a0b1e5d.jpg', 1, ''),
-(6, 'madred', 'cover land page.jpg', 2, '');
+(7, 'My Sql', 'microphone-1209816_1920.jpg', 7, '');
 
 -- --------------------------------------------------------
 
@@ -116,6 +109,13 @@ CREATE TABLE `likes` (
   `user_id` int(50) NOT NULL,
   `post_id` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`user_id`, `post_id`) VALUES
+(8, 34);
 
 -- --------------------------------------------------------
 
@@ -135,9 +135,7 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`members_id`, `user_id`, `group_id`, `status`) VALUES
-(17, 4, 6, 'accepted'),
-(21, 2, 4, 'accepted'),
-(22, 1, 6, 'accepted');
+(25, 8, 7, 'accepted');
 
 -- --------------------------------------------------------
 
@@ -159,8 +157,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`post_id`, `user_id`, `content`, `created_at`, `group_id`, `post_image`) VALUES
-(32, 2, 'a', '2023-02-26 16:38:50', 0, 'a'),
-(33, 2, 'aaaa', '2023-02-26 16:39:40', 0, 'a');
+(34, 8, 'ahmad', '2023-03-01 10:49:25', 0, 'Developer lab black minimalist by theSamnite.jpg');
 
 -- --------------------------------------------------------
 
@@ -174,7 +171,7 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `phone` varchar(14) NOT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT 'icon.png',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -183,12 +180,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `image`, `created_at`) VALUES
-(1, 'mohammad', 'mohammad@gmail.com', 'asdfghjkl', 'asdfghjkl', 'icon.png', '2023-02-22 21:00:00'),
-(2, 'ahmed', 'ahmed@gmail.com', 'zxcvbnm', '0790369501', 'icon.png', '2023-02-22 21:00:00'),
-(3, 'asem', 'asem@gmail.com', 'asdfghjkl', '0790369501', 'icon.png', '2023-02-22 21:00:00'),
-(4, 'abedd', 'abed@gmail.com', 'asdfghjkl', '0797621548', 'icon.png', '2023-02-23 21:00:00'),
-(5, 'amroa', 'abeda@gmail.com', 'asdfghjkl', '0790369501', 'icon.png', '2023-02-24 21:00:00'),
-(6, 'jackk', 'jack@gmail.com', 'asdfghjkl', '0790369501', 'icon.png', '2023-02-24 21:00:00');
+(7, 'hudaalosaliy', 'huda@gmail.com', 'asdfghjkl', '0799999999', 'icon.png', '2023-02-28 21:00:00'),
+(8, 'ahmadzaitoon', 'ahmad@gmail.com', 'asdfghjkl', '0796781246', 'IMG_0591.JPEG', '2023-02-28 21:00:00');
 
 --
 -- Indexes for dumped tables
@@ -262,31 +255,31 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `group_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `group_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `members_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `members_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `post_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

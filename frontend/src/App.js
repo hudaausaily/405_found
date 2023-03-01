@@ -12,10 +12,7 @@ import Users from './pages/users';
 import CreateGroup from './pages/createGroup';
 import Friends from './pages/friends';
 import Nav from './components/nav';
-
-
-
-
+import Friendprofile from './pages/friendprofile';
 
 function App() {
   return (
@@ -26,6 +23,7 @@ function App() {
     <Route path="/register" element={ <Register/> } />
     <Route path="/groups" element={<Groups/>}/>
     <Route path="/groups/singleGroup/:id/show" element={<SingleGroup/>}/>
+    <Route path="/Friendprofile/:id" element={<Friendprofile/>}/>
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/profile/editProfile/:id/edit" element={<EditProfile/>}/>
     <Route path="/createGroup" element={<CreateGroup/>}/>

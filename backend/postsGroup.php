@@ -45,7 +45,7 @@ switch ($method) {
         }
 
         if($file != ""){
-            $targetDir = "../src/components/image/";
+            $targetDir = "../frontend/src/image/";
             $fileName = basename($file["name"]);
             $targetPath = $targetDir . $fileName;
         

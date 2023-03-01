@@ -1,29 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BsBellFill } from 'react-icons/bs'
+import { AiOutlineLogout } from 'react-icons/ai'
+
 
 const Nav = () => {
+
+
+
     return (
-      
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">Navbar</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
-            
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="images/resources/admin.jpg" alt="" style={{ borderRadius: '50%', display: 'inline-block', transform: 'scale(0.7)',verticalAlign: 'inherit'}}/>
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a className="dropdown-item" href="#">Action</a>
-                <a className="dropdown-item" href="#">Another action</a>
-                <a className="dropdown-item" href="#">Something else here</a>
-              </div>
+        <div className="topbar stick">
+            <div className="logo">
+                <a  href="newsfeed.html"><img src="../images/tag2.png" alt="" style={{marginTop:'-1px'}}/></a>
+            </div>
+
+            <div className="top-area">
+
+
+                
+                <ul className="setting-area">
+
+                <li  className="nav-item dropdown" style={{marginTop:'8px'}}>
+
+                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                   <img src="../images/resources/bell1.png" alt="" style={{ borderRadius: '50%', display: 'inline-block', transform: 'scale(0.7)',verticalAlign: 'inherit'}}/>
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+                    <a className="dropdown-item" href="#">Notification 1</a>
+                    <a className="dropdown-item" href="#">Notification 1</a>
+                    <a className="dropdown-item" href="#">Notification 1</a>
+                </div>
+               
             </li>
-          </ul>
+                  
+
+                   
+                     <li  className="nav-item dropdown" >
+
+                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <img src="../images/resources/admin.jpg" alt="" style={{ borderRadius: '50%', display: 'inline-block', transform: 'scale(0.7)',verticalAlign: 'inherit' , marginBottom:'-7px'}}/>
+                        </a>
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style={{transform: 'translate3d(-60px, -10px, 0px)'}}>
+                            <a className="dropdown-item" href="#">View Profile</a>
+                            <a className="dropdown-item" href="#">Edit Profile</a>
+                            <a className="dropdown-item" href="#">Logout</a>
+                        </div>
+                       
+                    </li>
+
+
+                </ul>
+              
+            </div>
+
+
         </div>
-      </nav>
+
     );
 }
 

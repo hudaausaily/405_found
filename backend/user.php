@@ -28,11 +28,11 @@ switch($method){
         $path = explode('/',$_SERVER['REQUEST_URI']);
         
         // print_r($path);break;
-        if(isset($path[4])&&is_numeric($path[4])){
+        if(isset($path[5])&&is_numeric($path[5])){
 
             $sql .= "   WHERE id = :id";
             $stmt =$conn->prepare($sql);
-            $stmt->bindParam(':id', $path[4]);
+            $stmt->bindParam(':id', $path[5]);
 
             $stmt->execute();
             $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
