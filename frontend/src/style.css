@@ -91,7 +91,6 @@ textarea:focus,
 select:focus,
 button:focus {
     outline: none;
-    
 }
 
 img {
@@ -293,9 +292,7 @@ section {
 .gray-bg {
     float: left;
     width: 100%;
-    background: #BCC0C0
-
-    ;
+    background: whitesmoke;
 }
 
 [type="submit"],
@@ -1294,8 +1291,8 @@ header.sticky {
 
 .central-meta {
     background: #2C2F33 none repeat scroll 0 0;
-    
-    border-radius: 8px;
+    border: 1px solid #ede9e9;
+    border-radius: 3px;
     display: inline-block;
     width: 100%;
     margin-bottom: 20px;
@@ -1306,10 +1303,6 @@ header.sticky {
     display: inline-block;
     width: 100%;
     
-}
-.cantral-meta .new-postbox{
-    background-color: white;
-
 }
 
 
@@ -1336,7 +1329,6 @@ header.sticky {
 .newpst-input textarea {
     float: left;
     width: 100%;
-
 }
 .attachments {
     border: 1px solid #eee;
@@ -1345,7 +1337,6 @@ header.sticky {
     text-align: right;
     border-top: 0;
     background-color: whitesmoke;
-    border-radius: 8px;
 }
 
 .attachments > ul {
@@ -1360,11 +1351,11 @@ header.sticky {
 }
 
 textarea {
-    border: white 2px solid;
+    border: 1px solid #eeeeee;
+    border-radius: 6px 6px 0 0;
     padding: 10px;
     width: 100%;
     border-bottom: 0;
-    border-radius: 8px;
 }
 
 form button {
@@ -1413,7 +1404,6 @@ form button {
     width: 100%;
     font-size: 18px;
     text-decoration: none;
-    color: white !important;
 }
 
 .friend-name > span {
@@ -1936,6 +1926,7 @@ li.post-comment .comet-avatar {
 .post-comt-box form textarea {
     background: #f3f3f3 none repeat scroll 0 0;
     border-color: transparent;
+    border-radius: 3px;
     color: #000000;
     font-size: 13.5px;
     font-weight: 500;
@@ -2309,7 +2300,7 @@ footer .logo {
 /*--- bottombar ---*/
 
 .bottombar {
-    background: brown;
+    background: #f6f6f6;
     float: left;
     padding: 20px 0;
     width: 100%;
@@ -2317,12 +2308,9 @@ footer .logo {
 
 .copyright {
     float: left;
-    font-size: 19px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 300;
     letter-spacing: 0.2px;
-    color: white !important;
-    margin-top: 8px;
-
 }
 
 .bottombar i {
@@ -2664,9 +2652,7 @@ li.facebook {
 li.twitter {
     background: #38bff1;
 }
-ins {
-    color: white;
-}
+
 li.google {
     background: #f24756;
 }
@@ -4291,6 +4277,7 @@ a.forgot-pwd {
 }
 
 .message-text-container textarea {
+    border-radius: 0;
     box-sizing: content-box;
     color: #7f7f7f;
     height: 50px;
@@ -4953,6 +4940,7 @@ canvas {
     font-size: 14px;
     height: 50px;
     line-height: 27px;
+    border-radius: 0;
     background: #f0f0f0;
 }
 
@@ -10101,6 +10089,4 @@ aside.sidebar.full-style {
     text-transform: uppercase;
 }
 
-.di{
-    background-color: brown;
-}
+

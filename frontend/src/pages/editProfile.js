@@ -121,13 +121,13 @@ const handleEditUser = (e) => {
                             <span>@{Oneuser.name}</span>
                           </li>
                           <li>
-                            <a className="active" href="time-line.html"  data-ripple>time line</a>
-                            <a className href="timeline-photos.html"  data-ripple>Photos</a>
-                            <a className href="timeline-videos.html"  data-ripple>Videos</a>
-                            <a className href="timeline-friends.html"  data-ripple>Friends</a>
-                            <a className href="timeline-groups.html"  data-ripple>Groups</a>
-                            <a className href="about.html"  data-ripple>about</a>
-                            <a className href="#"  data-ripple>more</a>
+                            <a className="active" href="time-line.html" title data-ripple>time line</a>
+                            <a className href="timeline-photos.html" title data-ripple>Photos</a>
+                            <a className href="timeline-videos.html" title data-ripple>Videos</a>
+                            <a className href="timeline-friends.html" title data-ripple>Friends</a>
+                            <a className href="timeline-groups.html" title data-ripple>Groups</a>
+                            <a className href="about.html" title data-ripple>about</a>
+                            <a className href="#" title data-ripple>more</a>
                           </li>
                         </ul>
                       </div>
@@ -188,16 +188,7 @@ const handleEditUser = (e) => {
         </div>
            )
                         })}
-          <div className="bottombar">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12">
-                  <span className="copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></span>
-                  <i><img src="images/credit-cards.png" alt="" /></i>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
     </div>
     );

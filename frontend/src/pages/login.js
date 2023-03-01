@@ -59,7 +59,7 @@ if(name==="email"){
                 console.log(true);
                 window.localStorage.setItem('email',this.state.email)
                 window.localStorage.setItem('id',ele.id)
-                // window.localStorage.setItem('image',ele.image)
+                window.localStorage.setItem('image',ele.image)
 
                 window.location.assign('/home')
 

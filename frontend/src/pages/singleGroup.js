@@ -10,6 +10,8 @@ import { useState , useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import {  useParams} from "react-router-dom";
 
+import FeedGroup from '../components/singleGroup/feedGroup';
+
 const SingleGroup = () => {
    
   const {id} =useParams();
@@ -149,7 +151,7 @@ function getGroups(){
 // لاضافة عضو لجروب معين
 const AddToGroup = (groupId) => {
   let inputs = {user_id:current_ID , group_id:groupId};
-  axios.post(`http://localhost:80/405_found/back_end/membersGroup.php/save`,inputs)
+  axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
   .then((respone)=>{
       console.log(respone.data);
       getPendingMempers();
@@ -307,11 +309,11 @@ let flag = false;
                           <span>@{groups.group_name}</span>
                         </li>
                         <li>
-                          <a className="active" href="fav-page.html"   data-ripple>Page</a>
-                          <a className href="inbox.html"   data-ripple>inbox</a>
-                          <a className href="insights.html"   data-ripple>insights</a>
-                          <a className href="fav-page.html"   data-ripple>posts</a>
-                          <a className href="page-likers.html"   data-ripple>likers</a>
+                          <a className="active" href="fav-page.html" title data-ripple>Page</a>
+                          <a className href="inbox.html" title data-ripple>inbox</a>
+                          <a className href="insights.html" title data-ripple>insights</a>
+                          <a className href="fav-page.html" title data-ripple>posts</a>
+                          <a className href="page-likers.html" title data-ripple>likers</a>
                         </li>
                       </ul>
                     </div>
@@ -326,151 +328,10 @@ let flag = false;
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="row" id="page-contents">
-                     <Sidebar/>
-                      <div className="col-lg-6">
-                        <div className="central-meta">
-                          <div className="new-postbox">
-                            <figure>
-                              <img src="images/resources/admin3.jpg" alt="" />
-                            </figure>
-                            <div className="newpst-input">
-                              <form method="post">
-                                <textarea rows={3} placeholder="write something" defaultValue={""} />
-                                <div className="attachments">
-                                  <ul>
-                              
-                                    <li>
-                                      <i className="fa fa-image" />
-                                      <label className="fileContainer">
-                                        <input type="file" />
-                                      </label>
-                                    </li>
-                                    <li>
-                                      <i className="fa fa-video-camera" />
-                                      <label className="fileContainer">
-                                        <input type="file" />
-                                      </label>
-                                    </li>
-                                    <li>
-                                      <button type="submit">Publish</button>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>{/* add post new box */}
-                        <div className="loadMore">
-                        <div className="central-meta item">
-                        <div className="user-post">
-                          <span className="friend-info">
-                            <figure>
-                              <img src="images/resources/friend-avatar10.jpg" alt="" />
-                            </figure>
-                            <span className="friend-name" >
-                              <ins><a stylehref="time-line.html"  >Janice Griffith</a></ins> 
-                              <span>published: june,2 2018 19:PM</span> 
-                            </span>
-                            <span><AiFillEdit className='icons'/><MdDeleteForever className='icons' style={{color:'red'}}/></span>
-                            <div className="post-meta">
-                              <img src="images/resources/user-post.jpg" alt="" />
-                              <div className="we-video-info">
-                                <ul>
-                                  <li>
-                                    <span className="views" data-toggle="tooltip" title="views">
-                                      <i className="fa fa-eye" />
-                                      <ins>1.2k</ins>
-                                    </span>
-                                  </li>
-                                  <li>
-                                    <span className="comment" data-toggle="tooltip" title="Comments">
-                                      <i className="fa fa-comments-o" />
-                                      <ins>52</ins>
-                                    </span>
-                                  </li>
-                                  <li>
-                                    <span className="like" data-toggle="tooltip" title="like">
-                                      <i className="ti-heart" />
-                                      <ins>2.2k</ins>
-                                    </span>
-                                  </li>
-                                  <li>
-                                    <span className="dislike" data-toggle="tooltip" title="dislike">
-                                      <i className="ti-heart-broken" />
-                                      <ins>200</ins>
-                                    </span>
-                                  </li>
-                                
-                                </ul>
-                              </div>
-                              <div className="description">
-                                <p>
-                                  World's most beautiful car in Curabitur <a href="#"  >#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
-                                </p>
-                              </div>
-                            </div>
-                          </span>
-                          <div className="coment-area">
-                            <ul className="we-comet">
-                          {/*  COMMENT*/ }
+                        <Sidebar/> 
+                        <FeedGroup group_id={id} />
 
-                              <li>
-                                <div className="comet-avatar">
-                                  <img src="images/resources/comet-1.jpg" alt="" />
-                                </div>
-                                <div className="we-comment">
-                                  <div className="coment-head">
-                                    <h5><a href="time-line.html"  >Donald Trump</a></h5>
-                                    <span>1 week ago</span>
-                                    <a className="we-reply" href="#" title="Reply"><i className="fa fa-reply" /></a>
-                                  </div>
-                                  <p>we are working for the dance and sing songs. this video is very awesome for the youngster. please vote this video and like our channel
-                                    <i className="em em-smiley" />
-                                  </p>
-                                </div>
-                              </li>
-
-                          {/*END COMMENT*/ }
-
-                           {/* INPUT COMMENT*/ }
-                              <li className="post-comment">
-                                <div className="comet-avatar">
-                                  <img src="images/resources/comet-1.jpg" alt="" />
-                                </div>
-                                <div className="post-comt-box">
-                                  <form method="post">
-                                    <textarea placeholder="Post your comment" defaultValue={""} />
-                                    <div className="add-smiles">
-                                      <span className="em em-expressionless" title="add icon" />
-                                    </div>
-                                    <div className="smiles-bunch">
-                                      <i className="em em---1" />
-                                      <i className="em em-smiley" />
-                                      <i className="em em-anguished" />
-                                      <i className="em em-laughing" />
-                                      <i className="em em-angry" />
-                                      <i className="em em-astonished" />
-                                      <i className="em em-blush" />
-                                      <i className="em em-disappointed" />
-                                      <i className="em em-worried" />
-                                      <i className="em em-kissing_heart" />
-                                      <i className="em em-rage" />
-                                      <i className="em em-stuck_out_tongue" />
-                                    </div>
-                                    <button type="submit" />
-                                  </form>	
-                                </div>
-                              </li>
-                          {/* END INPUT COMMENT*/ }
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                          
-                         
-                          
-                        </div>
-                      </div>{/* centerl meta */}
+                      {/* centerl meta */}
                       {/* ______________________GroupRightBar______________________ */}
                       <div className="col-lg-3">
         <aside className="sidebar static">
@@ -480,10 +341,10 @@ let flag = false;
             <h4 className="widget-title">Group Admin</h4>	
             <div className="your-page">
               <figure>
-                <a href="#"  ><img  src={groups && groups.image ? require(`../image/${groups.image}`) : "https://www.example.com/example.png"} alt="vcc" /></a>
+                <a href="#" title><img  src={groups && groups.image ? require(`../image/${groups.image}`) : "https://www.example.com/example.png"} alt="vcc" /></a>
               </figure>
               <div className="page-meta">
-                <a href="#"   className="">{groups.name}</a>
+                <a href="#" title className="">{groups.name}</a>
                 
              
               
@@ -511,7 +372,7 @@ let flag = false;
                   create your own favourite page.
                 </p>
                 <span>like them all</span>
-                <a data-ripple   href="#">start now!</a>
+                <a data-ripple title href="#">start now!</a>
               </div>
   
 
@@ -575,67 +436,7 @@ let flag = false;
               </li>
    )  })}
           
-              {/* <li>
-                <figure>
-                  <img src="images/resources/friend-avatar3.jpg" alt="" />
-                  <span className="status f-off" />
-                </figure>
-                <div className="friendz-meta">
-                  <a href="time-line.html">jason borne</a>
-                  <i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="1d777c6e72737f5d7a707c7471337e7270">[email&nbsp;protected]</a></i>
-                </div>
-              </li>
-              <li>
-                <figure>
-                  <img src="images/resources/friend-avatar4.jpg" alt="" />
-                  <span className="status f-off" />
-                </figure>
-                <div className="friendz-meta">
-                  <a href="time-line.html">Cameron diaz</a>
-                  <i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="bed4dfcdd1d0dcfed9d3dfd7d290ddd1d3">[email&nbsp;protected]</a></i>
-                </div>
-              </li>
-              <li>
-                <figure>
-                  <img src="images/resources/friend-avatar5.jpg" alt="" />
-                  <span className="status f-online" />
-                </figure>
-                <div className="friendz-meta">
-                  <a href="time-line.html">daniel warber</a>
-                  <i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="553f34263a3b37153238343c397b363a38">[email&nbsp;protected]</a></i>
-                </div>
-              </li>
-              <li>
-                <figure>
-                  <img src="images/resources/friend-avatar6.jpg" alt="" />
-                  <span className="status f-away" />
-                </figure>
-                <div className="friendz-meta">
-                  <a href="time-line.html">andrew</a>
-                  <i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="5933382a36373b193e34383035773a3634">[email&nbsp;protected]</a></i>
-                </div>
-              </li>
-              <li>
-                <figure>
-                  <img src="images/resources/friend-avatar7.jpg" alt="" />
-                  <span className="status f-off" />
-                </figure>
-                <div className="friendz-meta">
-                  <a href="time-line.html">amy watson</a>
-                  <i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="5933382a36373b193e34383035773a3634">[email&nbsp;protected]</a></i>
-                </div>
-              </li>
-              <li>
-                <figure>
-                  <img src="images/resources/friend-avatar5.jpg" alt="" />
-                  <span className="status f-online" />
-                </figure>
-                <div className="friendz-meta">
-                  <a href="time-line.html">daniel warber</a>
-                  <i><a href="https://wpkixx.com/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="dbb1baa8b4b5b99bbcb6bab2b7f5b8b4b6">[email&nbsp;protected]</a></i>
-                </div>
-              </li> */}
-          
+              
             </ul>
             <div className="chat-box">
               <div className="chat-head">
@@ -711,16 +512,7 @@ let flag = false;
             </div>	
           </section>
          
-          <div className="bottombar">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12">
-                  <span className="copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></span>
-                  <i><img src="images/credit-cards.png" alt="" /></i>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
         )})}
           </div>

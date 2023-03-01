@@ -5,6 +5,8 @@ import Sidebar from '../components/sidebar';
 import { useState , useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import {MdOutlineGroups} from "react-icons/md"
+
 
 const Groups = () => {
 
@@ -64,7 +66,7 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
        //للجروبات accepted لعرض كل طلبات المستخدم اللي حالتهم 
        const getAcceptedMempers = () => {
 
-        axios.get(`http://localhost:80/405_found/back_end/getAcceptedMember.php/${current_ID}`)
+        axios.get(`http://localhost:80/405found/backend/getAcceptedMember.php/${current_ID}`)
         .then((respone)=>{
             console.log(respone.data);
             let acceptedMembers = respone.data.map((ele)=>{
@@ -110,7 +112,7 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
                     <div className="col-lg-6">
                       <div className="central-meta">
                         <div className="groups">
-                          <span><i className="fa fa-users" /> Groups</span>
+                          <span className='sideLink'><MdOutlineGroups className='sideIcons'/> Groups</span>
                         </div>
                         <ul className="nearby-contct">
                           {/* _____________ */}
@@ -124,10 +126,10 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
                           <li key={index}>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html"  ><img src={require(`../image/${ele.group_image}`)} alt="" /></a>
+                                <a href="time-line.html" title><img src={require(`../image/${ele.group_image}`)} alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html"  >{ele.group_name}</a></h4>
+                                <h4><a href="time-line.html" title>{ele.group_name}</a></h4>
                                 <span> <Link to={`/groups/singleGroup/${ele.group_id}/show`}> Show Group </Link></span>
                                 <em>32k Members</em>
 
@@ -137,7 +139,7 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
                             if (pendingMembers.includes(ele.group_id) || acceptedMembers.includes(ele.group_id) ){
                                 if(pendingMembers.includes(ele.group_id)){
                                   return ( 
-                                          <button    onClick={()=>removeRequest(ele.group_id)} className="add-butn" data-ripple>remove request</button> 
+                                          <button  title onClick={()=>removeRequest(ele.group_id)} className="add-butn" data-ripple>remove request</button> 
 
                                       
                                       )
@@ -145,7 +147,7 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
                                 }
                                 if(acceptedMembers.includes(ele.group_id)){
                                     return (
-                                        <button onClick={()=>removeRequest(ele.group_id)}   className="add-butn" data-ripple>join now</button>
+                                        <button onClick={()=>removeRequest(ele.group_id)} title className="add-butn" data-ripple>join now</button>
 
                 
 
@@ -157,7 +159,7 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
                              
                             }else{
                               return ( 
-                                        <button   onClick={()=>AddToGroup(ele.group_id)} className="add-butn" data-ripple>join now</button>
+                                        <button title onClick={()=>AddToGroup(ele.group_id)} className="add-butn" data-ripple>join now</button>
 
                               
                             
@@ -187,16 +189,7 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
           </div>	
         </section>
       
-        <div className="bottombar">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <span className="copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></span>
-                <i><img src="images/credit-cards.png" alt="" /></i>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     );
 }

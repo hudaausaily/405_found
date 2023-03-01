@@ -186,13 +186,13 @@ const Users = () => {
                           <li>
                             <div className="nearly-pepls">
                               <figure>
-                                <a href="time-line.html"  ><img src={require(`../image/${ele.image}`)} alt="" /></a>
+                                <a href="time-line.html" title><img src={require(`../image/${ele.image}`)} alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html"  >{ele.name}</a></h4>
-                                <h6><a href="time-line.html"  >  {ele.email}  </a></h6>
+                                <h4><a href="time-line.html" title>{ele.name}</a></h4>
+                                <h6><a href="time-line.html" title>  {ele.email}  </a></h6>
                                 {/* ____________________ */}
-                                {/* <a href="#"   className="add-butn" data-ripple>add friend</a> */}
+                                {/* <a href="#" title className="add-butn" data-ripple>add friend</a> */}
                                 {(() => {
                             if (pendingRequest.includes(ele.id) || friends.includes(ele.id) || requestFriend.includes(ele.id)){
                                 if(pendingRequest.includes(ele.id)){
@@ -271,16 +271,7 @@ const Users = () => {
           </div>	
         </section>
       
-        <div className="bottombar">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <span className="copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></span>
-                <i><img src="images/credit-cards.png" alt="" /></i>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     );
 }

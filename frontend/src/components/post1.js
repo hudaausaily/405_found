@@ -1,7 +1,6 @@
 import React from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import { AiFillEdit } from 'react-icons/ai';
-import SweetAlert from 'react-bootstrap-sweetalert';
 
 
 const Post1 = () => {

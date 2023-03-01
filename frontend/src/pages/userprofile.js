@@ -17,7 +17,7 @@ const userprofile = () => {
                         <div className="add-btn">
                           <span>1205 friends</span>
                           
-                          <a href="#"   data-ripple>Edit Profile</a>
+                          <a href="#" title data-ripple>Edit Profile</a>
                         </div>
                         <form className="edit-phto">
                           <i className="fa fa-camera-retro" />
@@ -50,13 +50,13 @@ const userprofile = () => {
                                     <span>Group Admin</span>
                                   </li>
                                   <li>
-                                    <a className="active" href="time-line.html"   data-ripple>time line</a>
-                                    <a className href="timeline-photos.html"   data-ripple>Photos</a>
-                                    <a className href="timeline-videos.html"   data-ripple>Videos</a>
-                                    <a className href="timeline-friends.html"   data-ripple>Friends</a>
-                                    <a className href="timeline-groups.html"   data-ripple>Groups</a>
-                                    <a className href="about.html"   data-ripple>about</a>
-                                    <a className href="#"   data-ripple>more</a>
+                                    <a className="active" href="time-line.html" title data-ripple>time line</a>
+                                    <a className href="timeline-photos.html" title data-ripple>Photos</a>
+                                    <a className href="timeline-videos.html" title data-ripple>Videos</a>
+                                    <a className href="timeline-friends.html" title data-ripple>Friends</a>
+                                    <a className href="timeline-groups.html" title data-ripple>Groups</a>
+                                    <a className href="about.html" title data-ripple>about</a>
+                                    <a className href="#" title data-ripple>more</a>
                                   </li>
                                 </ul>
                               </div>
@@ -125,7 +125,7 @@ const userprofile = () => {
                                           <img src="images/resources/friend-avatar10.jpg" alt="" />
                                         </figure>
                                         <div className="friend-name">
-                                          <ins><a href="time-line.html"  >Janice Griffith</a></ins>
+                                          <ins><a href="time-line.html" title>Janice Griffith</a></ins>
                                           <span>published: june,2 2018 19:PM</span>
                                         </div>
                                         <span><AiFillEdit className='icons'/><MdDeleteForever className='icons' style={{color:'red'}}/></span>
@@ -161,30 +161,30 @@ const userprofile = () => {
                                                 <div className="menu">
                                                   <div className="btn trigger"><i className="fa fa-share-alt" /></div>
                                                   <div className="rotater">
-                                                    <div className="btn btn-icon"><a href="#"  ><i className="fa fa-html5" /></a></div>
+                                                    <div className="btn btn-icon"><a href="#" title><i className="fa fa-html5" /></a></div>
                                                   </div>
                                                   <div className="rotater">
-                                                    <div className="btn btn-icon"><a href="#"  ><i className="fa fa-facebook" /></a></div>
+                                                    <div className="btn btn-icon"><a href="#" title><i className="fa fa-facebook" /></a></div>
                                                   </div>
                                                   <div className="rotater">
-                                                    <div className="btn btn-icon"><a href="#"  ><i className="fa fa-google-plus" /></a></div>
+                                                    <div className="btn btn-icon"><a href="#" title><i className="fa fa-google-plus" /></a></div>
                                                   </div>
                                                   <div className="rotater">
-                                                    <div className="btn btn-icon"><a href="#"  ><i className="fa fa-twitter" /></a></div>
+                                                    <div className="btn btn-icon"><a href="#" title><i className="fa fa-twitter" /></a></div>
                                                   </div>
                                                   <div className="rotater">
-                                                    <div className="btn btn-icon"><a href="#"  ><i className="fa fa-css3" /></a></div>
+                                                    <div className="btn btn-icon"><a href="#" title><i className="fa fa-css3" /></a></div>
                                                   </div>
                                                   <div className="rotater">
-                                                    <div className="btn btn-icon"><a href="#"  ><i className="fa fa-instagram" /></a>
+                                                    <div className="btn btn-icon"><a href="#" title><i className="fa fa-instagram" /></a>
                                                     </div>
                                                   </div>
                                                   <div className="rotater">
-                                                    <div className="btn btn-icon"><a href="#"  ><i className="fa fa-dribbble" /></a>
+                                                    <div className="btn btn-icon"><a href="#" title><i className="fa fa-dribbble" /></a>
                                                     </div>
                                                   </div>
                                                   <div className="rotater">
-                                                    <div className="btn btn-icon"><a href="#"  ><i className="fa fa-pinterest" /></a>
+                                                    <div className="btn btn-icon"><a href="#" title><i className="fa fa-pinterest" /></a>
                                                     </div>
                                                   </div>
                                                 </div>
@@ -193,7 +193,7 @@ const userprofile = () => {
                                           </div>
                                           <div className="description">
                                             <p>
-                                              World's most beautiful car in Curabitur <a href="#"  >#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
+                                              World's most beautiful car in Curabitur <a href="#" title>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
                                             </p>
                                           </div>
                                         </div>
@@ -208,7 +208,7 @@ const userprofile = () => {
                                             </div>
                                             <div className="we-comment">
                                               <div className="coment-head">
-                                                <h5><a href="time-line.html"  >Donald Trump</a></h5>
+                                                <h5><a href="time-line.html" title>Donald Trump</a></h5>
                                                 <span>1 week ago</span>
                                                 <a className="we-reply" href="#" title="Reply"><i className="fa fa-reply" /></a>
                                               </div>
@@ -265,16 +265,7 @@ const userprofile = () => {
                     </div>	
                   </section>
                    
-                    <div className="bottombar">
-                      <div className="container">
-                        <div className="row">
-                          <div className="col-md-12">
-                            <span className="copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></span>
-                            <i><img src="images/credit-cards.png" alt="" /></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                   
                   </div>
                   
                 </div>
