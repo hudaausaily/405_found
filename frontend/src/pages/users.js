@@ -6,6 +6,7 @@ import Sidebar from '../components/sidebar';
 import axios from 'axios';
 import { useState,useEffect } from "react";
 import { Link } from 'react-router-dom';
+import { MdOutlineGroups } from 'react-icons/md';
 const Users = () => {
 
 
@@ -159,7 +160,7 @@ const Users = () => {
         
         
           <div className="gap gray-bg">
-            <div className="container-fluid">
+            <div className="container-fluid" style={{backgroundColor:'#212529'}} >
             
               <div className="row">
                 <div className="col-lg-12">
@@ -169,7 +170,7 @@ const Users = () => {
                     <div className="col-lg-6">
                       <div className="central-meta">
                         <div className="groups">
-                          <span><i className="fa fa-users" />All Users</span>
+                          <span style={{color:'white'}}><MdOutlineGroups className='sideIcons' style={{fontSize:'50px'}}/>All Users</span>
                         </div>
                         <ul className="nearby-contct">
                           {/* ____________________ */}
@@ -183,14 +184,18 @@ const Users = () => {
                         return(
 
 
-                          <li>
-                            <div className="nearly-pepls">
-                              <figure>
-                                <a href="time-line.html" title><img src={require(`../image/${ele.image}`)} alt="" /></a>
+                          <li style={{backgroundColor:'#212529',border:'none'}} key={index}>
+                            <div className="nearly-pepls" style={{backgroundColor:'#212529'}}>
+                            <figure>
+                                <Link to={`/Friendprofile/${ele.id}`} title><img style={{height:'60px',width:'60px'}} src={require(`../image/${ele.image}`)}alt="" /></Link>
                               </figure>
+
+
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>{ele.name}</a></h4>
-                                <h6><a href="time-line.html" title>  {ele.email}  </a></h6>
+                                <h4 style={{fontSize:'20px'}}><Link to={`/Friendprofile/${ele.id} `}> 
+                                    {ele.name}
+                                  </Link> </h4>
+                                <h6 ><a style={{fontSize:'13px'}} href="#" title>  {ele.email}  </a></h6>
                                 {/* ____________________ */}
                                 {/* <a href="#" title className="add-butn" data-ripple>add friend</a> */}
                                 {(() => {
@@ -198,48 +203,45 @@ const Users = () => {
                                 if(pendingRequest.includes(ele.id)){
                                     return (
 
-                                           <Link>
-                                                    <button type="submit" className="add-butn" onClick={()=>removeRequest(ele.id)}>
-                                                    {" "}
-                                                    remove request
-                                                    </button>
-                                            </Link>
-
+                                          
+                                                  
+                                                    <button  className="mtr-btn " data-ripple onClick={()=>removeRequest(ele.id)} style={{color:'#212529',backgroundColor:'brown',fontWeight:'500'}}>remove request</button>
+                                            
                                     )
 
                                 }
                                 if(friends.includes(ele.id)){
                                     return (
-                                        <Link>
-                                        <button type="submit" className="add-butn" onClick={()=>removeFriend(ele.id)}>
-                                        {" "}
-                                        remove friends
-                                        </button>
-                                </Link>
-                                                    // <Button className="blogBtn2" onClick={()=>removeFriend(ele.id)}>remove friends</Button>
+                                        
+                                      
+
+                                        <button  className="mtr-btn " data-ripple onClick={()=>removeFriend(ele.id)} style={{color:'#212529',backgroundColor:'brown',fontWeight:'500'}}>remove friends</button>
+
+                              
                                         )
 
                                 }
                                 if(requestFriend.includes(ele.id)){
                                     return (
-                                        <Link>
-                                        <button type="submit" className="add-butn" onClick={()=>AcceptFriend(ele.id)}>
-                                        {" "}
-                                        Accept 
-                                        </button>
-                                </Link>
+                                        
+                                        
+
+                                        <button  className="mtr-btn primary" data-ripple onClick={()=>AcceptFriend(ele.id)} style={{marginRight:'20px', backgroundColor:'white',color:'#212529',fontWeight:'500'}}>Accept</button>
+
+                              
                                     )
 
                                 }
                              
                             }else{
                                 return ( 
-                                    <Link>
-                                        <button type="submit" className="add-butn" onClick={()=>AddFriends(ele.id)} >
-                                        {" "}
-                                        Add
-                                        </button>
-                                    </Link>
+                                    
+                                  
+
+                                        <button  className="mtr-btn primary" data-ripple onClick={()=>AddFriends(ele.id)} style={{marginRight:'20px', backgroundColor:'white',color:'#212529',fontWeight:'500'}}>Add</button>
+
+
+                                  
                                
                                 )
                             }
