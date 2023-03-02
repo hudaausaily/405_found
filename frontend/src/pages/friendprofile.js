@@ -13,6 +13,7 @@ import '../css/color.css';
 import '../css/main.min.css';
 import '../css/responsive.css';
 import '../css/addedStyle.css';
+import Footer from '../components/footer';
 const Friendprofile = () => {
 
   const {id} =useParams();
@@ -198,7 +199,6 @@ const removeFriend = (friendId) => {
 
       
                           <div className="add-btn">
-                            <span>1205 friends</span>
                             
                             {(() => {
                             if (pendingRequest.includes(users.id) || Myfriends.includes(users.id) || requestFriend.includes(users.id)){
@@ -239,7 +239,7 @@ const removeFriend = (friendId) => {
 
                         
                           
-                          <div className="container-fluid">
+                          <div className="container-fluid" style={{backgroundColor:'#212529'}}>
                             <div className="row merged">
                               <div className="col-lg-2 col-sm-3">
                                 <div className="user-avatar">
@@ -250,21 +250,12 @@ const removeFriend = (friendId) => {
                                 </div>
                               </div>
                               <div className="col-lg-10 col-sm-9">
-                                <div className="timeline-info">
-                                  <ul>
-                                    <li className="admin-name">
-                                      <h5>{users.name}</h5>
-                                      <span>@{users.name}</span>
+                                <div className="timeline-info" style={{background:'none'}}>
+                                <ul style={{backgroundColor:'brown', borderRadius:'0 20px 20px 0'}}>                                    <li className="admin-name">
+                                      <h5 style={{color:'white'}}>{users.name}</h5>
+                                      <span style={{fontSize:'12px',color:'gray'}}>@{users.name}</span>
                                     </li>
-                                    <li>
-                                      <a className="active" href="time-line.html" title data-ripple>time line</a>
-                                      <a className href="timeline-photos.html" title data-ripple>Photos</a>
-                                      <a className href="timeline-videos.html" title data-ripple>Videos</a>
-                                      <a className href="timeline-friends.html" title data-ripple>Friends</a>
-                                      <a className href="timeline-groups.html" title data-ripple>Groups</a>
-                                      <a className href="about.html" title data-ripple>about</a>
-                                      <a className href="#" title data-ripple>more</a>
-                                    </li>
+                                    
                                   </ul>
                                 </div>
                               </div>
@@ -291,22 +282,20 @@ const removeFriend = (friendId) => {
 
           <div className="widget">
           <div className="banner medium-opacity bluesh">
-          <div className="bg-image" style={{backgroundImage: 'url(../images/resources/baner-widgetbg.jpg)'}} />
-          <div className="baner-top">
-          <span><img alt="" src="../images/book-icon.png" /></span>
-          <i className="fa fa-ellipsis-h" />
-          </div>
-
-
-          <div className="banermeta">
-          <p>
-          create your own favourit page.
-          </p>
-          <span>like them all</span>
-          <a data-ripple title href="#">start now!</a>
-          </div>
+            <div className="bg-image" style={{backgroundImage: 'url(/images/tag2.png)'}} />
+            <div className="baner-top">
+              <span><img alt="" src="/images/book-icon.png" /></span>
+              <i className="fa fa-ellipsis-h" />
+            </div>
+            <div className="banermeta">
+              <p>
+              Think openly , explore new worlds and meet and reach out to friends on 405 Found .
+              </p>
+              
+              <a data-ripple  href="#">start now!</a>
+            </div>
           </div>											
-          </div>
+        </div>
 <div>
 
 <div className="">
@@ -378,16 +367,7 @@ const removeFriend = (friendId) => {
                       </div>	
                     </section>
                      
-                      <div className="bottombar">
-                        <div className="container">
-                          <div className="row">
-                            <div className="col-md-12">
-                              <span className="copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></span>
-                              <i><img src="../images/credit-cards.png" alt="" /></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <Footer/>
                     </div>
                     
                   </div>

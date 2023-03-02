@@ -123,7 +123,7 @@ try {
 const deletePost = (id) => {
 axios.delete(`http://localhost:80/405found/backend/postsGroup.php/${id}`).then(function(response){
   getPosts();
-  window.location.assign(`/groups/singleGroup/${group_id}/show`);
+  window.location.assign(`/profile`);
 })
 }
 

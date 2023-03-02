@@ -72,7 +72,7 @@ const Sidebar = () => {
 
             <li>
               <AiOutlineLogout className="sideIcons"/>
-              <Link to="landing.html"  className="sideLink">
+              <Link to="/" className="sideLink">
                 Logout
               </Link>
             </li>
@@ -137,7 +137,7 @@ const Sidebar = () => {
                   <li key={index}>
                     <figure>
                       {element.group_image && <img
-                        src={`../image/${element.group_image}`}
+                        src={require(`../image/${element.group_image}`)}
                         alt=""
                       />}
                     </figure>

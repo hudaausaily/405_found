@@ -91,16 +91,16 @@ function getUsers(){
                               
                                 <div className="widget">
                                   <div className="banner medium-opacity bluesh">
-                                    <div className="bg-image" style={{backgroundImage: 'url(images/resources/baner-widgetbg.jpg)'}} />
+                                    <div className="bg-image" style={{backgroundImage: 'url(/images/tag2.png)'}} />
                                     <div className="baner-top">
-                                      <span><img alt="" src="images/book-icon.png" /></span>
+                                      <span><img alt="" src="/images/book-icon.png" /></span>
                                       <i className="fa fa-ellipsis-h" />
                                     </div>
                                     <div className="banermeta">
                                       <p>
-                                        create your own favourit page.
+                                      Think openly , explore new worlds and meet and reach out to friends on 405 Found .
                                       </p>
-                                      <span>like them all</span>
+                                      
                                       <a data-ripple  href="#">start now!</a>
                                     </div>
                                   </div>											

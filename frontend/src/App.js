@@ -13,6 +13,7 @@ import CreateGroup from './pages/createGroup';
 import Friends from './pages/friends';
 import Nav from './components/nav';
 import Friendprofile from './pages/friendprofile';
+import RequestFriends from './pages/RequestFriends';
 
 function App() {
   return (
@@ -27,10 +28,9 @@ function App() {
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/profile/editProfile/:id/edit" element={<EditProfile/>}/>
     <Route path="/createGroup" element={<CreateGroup/>}/>
-
     <Route path="/friends" element={ <Friends/> } />
+    <Route path="/requestFriends" element={ <RequestFriends/> } />
 
-    <Route path="/nav" element={<Nav/>}/>
 
 
   </Routes>

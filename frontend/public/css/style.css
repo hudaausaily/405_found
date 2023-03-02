@@ -293,7 +293,7 @@ section {
 .gray-bg {
     float: left;
     width: 100%;
-    background: #BCC0C0
+    background: #212529;
 
     ;
 }
@@ -3428,7 +3428,6 @@ nav.breadcrumb {
 }
 
 .nearby-contct > li:hover {
-    box-shadow: 0 8px 8px #e1e8ec;
     border-color: transparent;
 }
 
@@ -3796,6 +3795,7 @@ a.add-butn.more-action {
     left: 0;
     position: absolute;
     width: 100%;
+    color: brown;
 }
 
 .f-title.ext-margin {

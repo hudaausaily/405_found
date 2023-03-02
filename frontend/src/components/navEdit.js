@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
-const Navbar = () => {
+const NavEdit = () => {
 
     const id = JSON.parse(localStorage.getItem('id'));
     const ImageUser = localStorage.getItem('image');
@@ -59,7 +59,7 @@ const Navbar = () => {
     return (
         <div className="topbar stick">
             <div className="logo">
-                <a  href="newsfeed.html"><img src="images/tag2.png" alt="" style={{marginTop:'-10px'}}/></a>
+                <a  href="newsfeed.html"><img src="/images/tag2.png" alt="" style={{marginTop:'-10px'}}/></a>
             </div>
 
             <div className="top-area">
@@ -71,7 +71,7 @@ const Navbar = () => {
                 <li  className="nav-item dropdown" style={{marginTop:'8px'}}>
 
                 <Link className="nav-link dropdown-toggle" to={"/requestFriends"} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                   <img src="images/resources/bell1.png"  alt=""  style={{height:"35px" , borderRadius: '50%', display: 'inline-block', transform: 'scale(0.7)',verticalAlign: 'inherit'}}/>
+                   <img src="/images/resources/bell1.png"  alt=""  style={{height:"35px" , borderRadius: '50%', display: 'inline-block', transform: 'scale(0.7)',verticalAlign: 'inherit'}}/>
                 </Link>
                 
                
@@ -104,4 +104,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+export default NavEdit;

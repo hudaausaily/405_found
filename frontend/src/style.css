@@ -292,7 +292,7 @@ section {
 .gray-bg {
     float: left;
     width: 100%;
-    background: whitesmoke;
+    background: #212529;
 }
 
 [type="submit"],
@@ -3414,7 +3414,6 @@ nav.breadcrumb {
 }
 
 .nearby-contct > li:hover {
-    box-shadow: 0 8px 8px #e1e8ec;
     border-color: transparent;
 }
 

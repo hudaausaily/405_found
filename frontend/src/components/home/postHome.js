@@ -3,7 +3,7 @@ import { MdDeleteForever } from 'react-icons/md';
 import { AiFillEdit } from 'react-icons/ai';
 import axios from 'axios';
 import { useState, useEffect, useParams } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link } from "react-router-dom";
 import { FaCommentAlt } from 'react-icons/fa';
 import { FcLike } from 'react-icons/fc';
 import { FcLikePlaceholder } from 'react-icons/fc';
@@ -102,7 +102,7 @@ const PostHome = (props) => {
 
   const deletePost = async (id) => {
     await axios.delete(`http://localhost:80/405found/backend/posts.php/${id}`).then(function (response) {
-      // window.location.assign('/');
+      window.location.assign('/home');
       // getPosts();
       getComments();
     })
@@ -249,8 +249,11 @@ const PostHome = (props) => {
             <img src={require(`../../image/${props.post.image}`)} alt="" />
           </figure>
           <div className="friend-name">
-            <ins>{props.post.name}</ins>
-            <span>{props.post.created_at}</span>
+          <ins>  <Link to={`/Friendprofile/${props.post.user_id} `}> 
+          {props.post.name}
+          </Link>
+          </ins>
+          <span>{props.post.created_at}</span>
           </div>
 
           {(props.post.user_id === current_ID) ?

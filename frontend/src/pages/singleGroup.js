@@ -234,7 +234,7 @@ let flag = false;
 
     return (
         <div className="theme-layout">
-         <Navbar/>
+         <Nav/>
           <section>
             <div className="feature-photo">
               <figure><img style={{maxHeight: '70vh'}}  src='https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80' alt="aa" /></figure>
@@ -291,7 +291,7 @@ let flag = false;
                   <input type="file" />
                 </label>
               </form>
-              <div className="container-fluid">
+              <div className="container-fluid" style={{backgroundColor:'#212529'}} >
                 <div className="row merged">
                   <div className="col-lg-2 col-sm-3">
                     <div className="user-avatar">
@@ -433,7 +433,7 @@ let flag = false;
                   <span className="status f-online" />
                 </figure>
                 <div className="friendz-meta">
-                  <a href="time-line.html">{element.name}</a>
+                  <Link to={`/Friendprofile/${element.id}`}>{element.name}</Link>
 
                   { groups.user_id === current_ID ?
                   <button onClick={() => {deleteFromGroup(element.user_id)}}>Delete</button>

@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useState , useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FeedProfile from '../components/profile/feedProfile';
+import Footer from '../components/footer';
 
 
 const Profile = () => {
@@ -53,18 +54,10 @@ return <div  key={index}>
                        <div className="feature-photo">
                          <figure><img src="images/resources/timeline-1.jpg" alt="" /></figure>
                          <div className="add-btn">
-                           <span>1205 friends</span>
                            
-                           <Link to={`/profile/editProfile/${users.id}/edit`} title data-ripple>Edit Profile</Link>
                          </div>
-                         <form className="edit-phto">
-                           <i className="fa fa-camera-retro" />
-                           {/* <label className="fileContainer">
-                             Edit Cover Photo
-                             <input type="file" />
-                           </label> */}
-                         </form>
-                         <div className="container-fluid">
+                        
+                         <div className="container-fluid" style={{backgroundColor:'#212529'}}>
                            <div className="row merged">
                              <div className="col-lg-2 col-sm-3">
                                <div className="user-avatar">
@@ -77,21 +70,24 @@ return <div  key={index}>
                                  </figure>
                                </div>
                              </div>
-                             <div className="col-lg-10 col-sm-9">
-                               <div className="timeline-info">
-                                 <ul>
+                             <div className="col-lg-10 col-sm-9" >
+                               <div className="timeline-info" style={{background:'none'}}>
+                               <ul style={{backgroundColor:'brown', borderRadius:'0 20px 20px 0'}}>
                                    <li className="admin-name">
-                                     <h5>{users.name}</h5>
-                                     <span>@{users.name}</span>
+                                     <h5 style={{color:'white'}}>{users.name}</h5>
+                                     <span style={{fontSize:'12px',color:'gray'}}>@{users.name}</span>
                                    </li>
                                    <li>
-                                     <a className="active" href="time-line.html" title data-ripple>time line</a>
-                                     <a className href="timeline-friends.html" title data-ripple>Friends</a>
-                                     <a className href="timeline-groups.html" title data-ripple>Groups</a>
-                                     <a className href="about.html" title data-ripple>about</a>
+                                     <Link className="active" style={{color:'black'}} to={"/profile"} title data-ripple>time line</Link>
+                                     <Link className to={"/groups"} style={{color:'black'}} data-ripple>Groups</Link>
+                                     <Link className="" to={"/requestFriends"} style={{color:'black'}} data-ripple>Request Friends</Link>
                                    </li>
                                  </ul>
                                </div>
+                               <div className="mtr-btn red" style={{marginTop:'185px !important',width:'140px',marginLeft:'1150px'}}>
+                           
+                                  <Link to={`/profile/editProfile/${users.id}/edit`} className="sideLink"  data-ripple>Edit Profile</Link>
+                                </div>
                              </div>
                            </div>
                          </div>
@@ -113,18 +109,10 @@ return <div  key={index}>
                      </div>	
                    </section>
                     
-                     <div className="bottombar">
-                       <div className="container">
-                         <div className="row">
-                           <div className="col-md-12">
-                             <span className="copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></span>
-                             <i><img src="images/credit-cards.png" alt="" /></i>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
+                     
                    </div>
-                   
+                   <Footer/>
+
                  </div>
                    })}
        </>
