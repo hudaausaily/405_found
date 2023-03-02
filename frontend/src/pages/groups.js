@@ -112,7 +112,9 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
                     <div className="col-lg-6">
                       <div className="central-meta">
                         <div className="groups">
-                          <span className='sideLink'><MdOutlineGroups className='sideIcons'/> Groups</span>
+                        <span style={{color:'white'}}><MdOutlineGroups className='sideIcons' style={{fontSize:'50px'}}/>Groups</span>
+
+                          {/* <span className='sideLink'><MdOutlineGroups className='sideIcons'/> Groups</span> */}
                         </div>
                         <ul className="nearby-contct">
                           {/* _____________ */}
@@ -123,50 +125,53 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
                     }
                     return true;
                     }).map((ele,index)=>(
-                          <li key={index}>
-                            <div className="nearly-pepls">
+                          <li key={index} style={{backgroundColor:'#212529',border:'none'}}>
+                            <div className="nearly-pepls" style={{backgroundColor:'#212529'}}>
                               <figure>
-                                <a href="time-line.html" title><img src={require(`../image/${ele.group_image}`)} alt="" /></a>
+                              
+                                <Link to={`/groups/singleGroup/${ele.group_id}/show`}><img style={{height:'60px',width:'60px'}} src={require(`../image/${ele.group_image}`)} alt="" /></Link>
+
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>{ele.group_name}</a></h4>
-                                <span> <Link to={`/groups/singleGroup/${ele.group_id}/show`}> Show Group </Link></span>
-                                <em>32k Members</em>
+                                <h4  style={{fontSize:'20px'}}><Link to={`/groups/singleGroup/${ele.group_id}/show`}>{ele.group_name}</Link></h4>
+                                {/* <span> <Link to={`/groups/singleGroup/${ele.group_id}/show`}> Show Group </Link></span> */}
+                                
 
 
-                          
-                                {(() => {
-                            if (pendingMembers.includes(ele.group_id) || acceptedMembers.includes(ele.group_id) ){
-                                if(pendingMembers.includes(ele.group_id)){
-                                  return ( 
-                                          <button  title onClick={()=>removeRequest(ele.group_id)} className="add-butn" data-ripple>remove request</button> 
-
-                                      
-                                      )
-
-                                }
-                                if(acceptedMembers.includes(ele.group_id)){
-                                    return (
-                                        <button onClick={()=>removeRequest(ele.group_id)} title className="add-butn" data-ripple>join now</button>
-
-                
-
-                                    
-                                                )
-
-                                }
-                              
-                             
-                            }else{
-                              return ( 
-                                        <button title onClick={()=>AddToGroup(ele.group_id)} className="add-butn" data-ripple>join now</button>
-
-                              
+      <div>
                             
-                              )
-                          }
-              
-            })()}
+                                  {(() => {
+                              if (pendingMembers.includes(ele.group_id) || acceptedMembers.includes(ele.group_id) ){
+                                  if(pendingMembers.includes(ele.group_id)){
+                                    return ( 
+                                            <button  className="mtr-btn " data-ripple onClick={()=>removeRequest(ele.group_id)} style={{ marginRight:'20px',color:'#212529',backgroundColor:'brown',fontWeight:'500'}}>remove request</button>
+        
+                                        
+                                        )
+        
+                                  }
+                                  if(acceptedMembers.includes(ele.group_id)){
+                                      return (
+                                          <button  className="mtr-btn " data-ripple onClick={()=>removeRequest(ele.group_id)} style={{marginRight:'20px', backgroundColor:'white',color:'#212529',fontWeight:'500'}}>join now</button>
+                  
+        
+                                      
+                                                  )
+        
+                                  }
+                                
+                               
+                              }else{
+                                return ( 
+                                          <button title onClick={()=>AddToGroup(ele.group_id)} className="add-butn" data-ripple>join now</button>
+        
+                                
+                              
+                                )
+                            }
+                
+              })()}
+      </div>
                               </div>
                             </div>
                           </li>
