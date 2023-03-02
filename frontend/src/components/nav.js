@@ -72,8 +72,9 @@ const Nav = () => {
 
                 <Link className="nav-link dropdown-toggle" to={"/requestFriends"} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                    <img src="/images/resources/bell1.png"  alt=""  style={{height:"35px" , borderRadius: '50%', display: 'inline-block', transform: 'scale(0.7)',verticalAlign: 'inherit'}}/>
+                   {requestFriends.length}
                 </Link>
-                
+              
                
             </li>
                   

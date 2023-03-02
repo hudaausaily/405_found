@@ -84,21 +84,21 @@ function getUsers(){
                               </div><br></br>
 
                               <div className="widget">
-                              <div className="banner medium-opacity bluesh">
-                                <div className="bg-image" style={{backgroundImage: 'url(images/resources/baner-widgetbg.jpg)'}} />
-                                <div className="baner-top">
-                                  <span><img alt="" src="images/book-icon.png" /></span>
-                                  <i className="fa fa-ellipsis-h" />
+                                  <div className="banner medium-opacity bluesh">
+                                    <div className="bg-image" style={{backgroundImage: 'url(/images/tag2.png)'}} />
+                                    <div className="baner-top">
+                                      <span><img alt="" src="/images/book-icon.png" /></span>
+                                      <i className="fa fa-ellipsis-h" />
+                                    </div>
+                                    <div className="banermeta">
+                                      <p>
+                                      Think openly , explore new worlds and meet and reach out to friends on 405 Found .
+                                      </p>
+                                      
+                                      <a data-ripple  href="#">start now!</a>
+                                    </div>
+                                  </div>											
                                 </div>
-                                <div className="banermeta">
-                                  <p>
-                                    create your own favourit page.
-                                  </p>
-                                  <span>like them all</span>
-                                  <a data-ripple  href="#">start now!</a>
-                                </div>
-                              </div>											
-                            </div>
                             <div className="widget friend-list stick-widget">
                             <h4 className="widget-title">Friends</h4>
                             <div id="searchDir" />
@@ -113,7 +113,9 @@ function getUsers(){
                                   <span className="status f-online" />
                                 </figure>
                                 <div className="friendz-meta">
-                                  <a href="time-line.html" className="sideLink">{ele.name}</a>
+                                <Link to={`/Friendprofile/${ele.friend_id} `}> 
+                                      {ele.name}
+                                    </Link> 
                                 </div>
                               </li>
 
