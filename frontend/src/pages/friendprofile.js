@@ -194,7 +194,7 @@ const removeFriend = (friendId) => {
                     <Nav/>
                       <section>
                         <div className="feature-photo">
-                          <figure><img src="../images/resources/timeline-1.jpg" alt="" /></figure>
+                          <figure><img  src="../images/resources/timeline-1.jpg" alt="" /></figure>
       
 
       

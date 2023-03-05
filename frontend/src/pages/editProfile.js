@@ -96,7 +96,7 @@ const handleEditUserSubmit  = async (e) => {
         <div>
             <section>
               <div className="feature-photo">
-                <figure><img src="/images/resources/timeline-1.jpg" alt="" /></figure>
+                <figure><img  src="/images/resources/timeline-1.jpg" alt="" /></figure>
                 <div className="add-btn">
                   
                 </div>
@@ -106,7 +106,7 @@ const handleEditUserSubmit  = async (e) => {
                     <div className="col-lg-2 col-sm-3">
                       <div className="user-avatar">
                         <figure>
-                          <img src={require(`../image/${Oneuser.image}`)} alt="" />
+                          <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../image/${Oneuser.image}`)} alt="" />
                           <form className="edit-phto">
                             <i className="fa fa-camera-retro" />
                             <label className="fileContainer">

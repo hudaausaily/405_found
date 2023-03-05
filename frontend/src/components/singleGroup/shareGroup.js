@@ -64,7 +64,7 @@ const handlePost = (e) => {
                               <div className="central-meta">
                           <div className="new-postbox">
                             <figure>
-                              <img src={require(`../../image/${ImageUser}`)} alt="" />
+                              <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${ImageUser}`)} alt="" />
                             </figure>
                             <div className="newpst-input">
                             <form onSubmit={handleImagePost}>                                

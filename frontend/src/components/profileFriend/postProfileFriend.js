@@ -254,7 +254,7 @@ const canclePostEdit = (id) => {
         <div className="user-post">
           <div className="friend-info">
             <figure>
-              <img  src={require(`../../image/${props.post.image}`)} alt="" />
+              <img style={{height:'40px',width:'40px',borderRadius:'45%'}}  src={require(`../../image/${props.post.image}`)} alt="" />
             </figure>
             <div className="friend-name">
               <ins>{props.post.name}</ins> 
@@ -271,7 +271,7 @@ const canclePostEdit = (id) => {
             
        <div className="post-meta">
 
-              <img src={require(`../../image/${props.post.post_image}`)}  alt="" />
+              <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${props.post.post_image}`)}  alt="" />
               <div className="we-video-info">
                 <ul>
                   {/* <li>
@@ -349,7 +349,7 @@ const canclePostEdit = (id) => {
                       return (
               <li key={index}>
                 <div className="comet-avatar">
-                  <img src={require(`../../image/${comment.image}`)} alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${comment.image}`)} alt="" />
                 </div>
                 <div className="we-comment">
                   <div className="coment-head">
@@ -374,7 +374,7 @@ const canclePostEdit = (id) => {
            {/* INPUT COMMENT*/ }
               <li className="post-comment">
                 <div className="comet-avatar">
-                  <img src={require(`../../image/${ImageUser}`)} alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${ImageUser}`)} alt="" />
                 </div>
                 <div className="post-comt-box">
                   <form method="post" onSubmit={handleCreateComment}>
