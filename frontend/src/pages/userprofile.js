@@ -265,7 +265,8 @@ const userprofile = () => {
                     </div>	
                   </section>
                    
-                   
+                  <Footer/>
+
                   </div>
                   
                 </div>

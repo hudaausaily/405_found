@@ -5,6 +5,9 @@ import axios from 'axios';
 import { useState , useEffect , useParams } from 'react'
 import { useNavigate } from "react-router-dom";
 import { BsFillCreditCard2BackFill } from 'react-icons/bs';
+import { FaCommentAlt } from 'react-icons/fa';
+import { FcLike } from 'react-icons/fc';
+import { FcLikePlaceholder } from 'react-icons/fc';
 
 
 
@@ -257,7 +260,7 @@ const canclePostEdit = (id) => {
         <div className="user-post">
           <div className="friend-info">
             <figure>
-              <img  src={require(`../../image/${props.post.image}`)} alt="" />
+              <img style={{height:'40px',width:'40px',borderRadius:'45%'}}  src={require(`../../image/${props.post.image}`)} alt="" />
             </figure>
             <div className="friend-name">
               <ins>{props.post.name}</ins> 
@@ -274,7 +277,7 @@ const canclePostEdit = (id) => {
             
        <div className="post-meta">
 
-              <img src={require(`../../image/${props.post.post_image}`)}  alt="" />
+              <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${props.post.post_image}`)}  alt="" />
               <div className="we-video-info">
                 <ul>
                   {/* <li>
@@ -288,7 +291,7 @@ const canclePostEdit = (id) => {
 
                   <li>
                     <span onClick={() =>ShowComments(props.post.post_id)} className="comment" data-toggle="tooltip" title="Comments">
-                      <i className="fa fa-comments-o" />
+                      <FaCommentAlt style={{ fontSize: '16px', color: 'white', marginLeft: '10px' }} />
                     </span>
                   </li>
 
@@ -314,7 +317,7 @@ const canclePostEdit = (id) => {
 
                   <li>
                     <button style={{background : 'none' , border : 'none' , color : '#0d6efd' , textDecoration : 'underLine' }} type='submit'  onClick={()=>handleLikePost(props.post.post_id)} className="dislike" data-toggle="tooltip" title="dislike">
-                      <i className="ti-heart-broken"  />
+                      <FcLike style={{ fontSize: '20px' }} />
                       <ins>{like_count}</ins>
                     </button>
                   </li>
@@ -324,11 +327,11 @@ const canclePostEdit = (id) => {
                   :
 
 
-                  <form action="" onSubmit={likePost}>
+                  <form action="" onSubmit={likePost} style={{ display: 'inline' }}>
 
                   <li>
                     <button style={{background : 'none' , border : 'none' , color : '#0d6efd' , textDecoration : 'underLine' }} type='submit' onClick={()=>handleLikePost(props.post.post_id)}  className="like" data-toggle="tooltip" title="like">
-                      <i className="ti-heart" />
+                      <FcLikePlaceholder style={{ fontSize: '20px' }} />
                       <ins>{like_count}</ins>
                     </button>
                   </li>
@@ -358,7 +361,7 @@ const canclePostEdit = (id) => {
                       return (
               <li key={index}>
                 <div className="comet-avatar">
-                  <img src={require(`../../image/${comment.image}`)} alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${comment.image}`)} alt="" />
                 </div>
                 <div className="we-comment">
                   <div className="coment-head">
@@ -383,7 +386,7 @@ const canclePostEdit = (id) => {
            {/* INPUT COMMENT*/ }
               <li className="post-comment">
                 <div className="comet-avatar">
-                  <img src={require(`../../image/${ImageUser}`)} alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${ImageUser}`)} alt="" />
                 </div>
                 <div className="post-comt-box">
                   <form method="post" onSubmit={handleCreateComment}>

@@ -6,6 +6,7 @@ import Sidebar from '../components/sidebar';
 import axios from 'axios';
 import { useState,useEffect } from "react";
 import { Link } from 'react-router-dom';
+import Footer from '../components/footer';
 const Users = () => {
 
 
@@ -169,7 +170,7 @@ const Users = () => {
                     <div className="col-lg-6">
                       <div className="central-meta">
                         <div className="groups">
-                          <span><i className="fa fa-users" />All Users</span>
+                          <span className='sideLink'><i className="fa fa-users" style={{color:'white'}}/>All Users</span>
                         </div>
                         <ul className="nearby-contct">
                           {/* ____________________ */}
@@ -183,14 +184,14 @@ const Users = () => {
                         return(
 
 
-                          <li>
-                            <div className="nearly-pepls">
+                          <li style={{backgroundColor:'#212529',border:'none'}}>
+                            <div className="nearly-pepls" style={{backgroundColor:'#212529'}} >
                               <figure>
                                 <a href="time-line.html" title><img src={require(`../image/${ele.image}`)} alt="" /></a>
                               </figure>
                               <div className="pepl-info">
-                                <h4><a href="time-line.html" title>{ele.name}</a></h4>
-                                <h6><a href="time-line.html" title>  {ele.email}  </a></h6>
+                                <h4 style={{fontSize:'20px'}}><a href="time-line.html" className='sideLink'>{ele.name}</a></h4>
+                                <h6><a href="time-line.html" >  {ele.email}  </a></h6>
                                 {/* ____________________ */}
                                 {/* <a href="#" title className="add-butn" data-ripple>add friend</a> */}
                                 {(() => {
@@ -199,9 +200,9 @@ const Users = () => {
                                     return (
 
                                            <Link>
-                                                    <button type="submit" className="add-butn" onClick={()=>removeRequest(ele.id)}>
+                                                    <button type="submit" className="add-butn" style={{backgroundColor:'white'}} onClick={()=>removeRequest(ele.id)}>
                                                     {" "}
-                                                    remove request
+                                                    remove friend
                                                     </button>
                                             </Link>
 
@@ -211,9 +212,9 @@ const Users = () => {
                                 if(friends.includes(ele.id)){
                                     return (
                                         <Link>
-                                        <button type="submit" className="add-butn" onClick={()=>removeFriend(ele.id)}>
+                                        <button type="submit" className="add-butn" onClick={()=>removeFriend(ele.id)} style={{backgroundColor:'white'}}>
                                         {" "}
-                                        remove friends
+                                        remove friend
                                         </button>
                                 </Link>
                                                     // <Button className="blogBtn2" onClick={()=>removeFriend(ele.id)}>remove friends</Button>
@@ -271,7 +272,7 @@ const Users = () => {
           </div>	
         </section>
       
-        
+        <Footer/>
       </div>
     );
 }

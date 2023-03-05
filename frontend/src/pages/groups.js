@@ -6,6 +6,7 @@ import { useState , useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {MdOutlineGroups} from "react-icons/md"
+import Footer from '../components/footer';
 
 
 const Groups = () => {
@@ -27,7 +28,7 @@ const Groups = () => {
 
   const getGroups =()=>{
       
-      axios.get("http://localhost/405found/backend/groups.php")
+      axios.get("http://localhost:80/405found/backend/groups.php")
     
       .then((res)=>{
           console.log(res.data)
@@ -188,7 +189,7 @@ axios.post(`http://localhost:80/405found/backend/membersGroup.php/save`,inputs)
             </div>
           </div>	
         </section>
-      
+      <Footer/>
         
       </div>
     );

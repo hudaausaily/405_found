@@ -74,7 +74,7 @@ const handlePost = (e) => {
                               <div className="central-meta">
                           <div className="new-postbox">
                             <figure>
-                              <img src={require(`../../image/${ImageUser}`)} alt="" />
+                              <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${ImageUser}`)} alt="" />
                             </figure>
                             <div className="newpst-input">
                             <form onSubmit={handleImagePost}>
@@ -86,7 +86,7 @@ const handlePost = (e) => {
                                       <i className="fa fa-image" />
                                       <label className="fileContainer">
                                         <input id="file"
-                     onChange={(e) => setFile(e.target.files[0])} type="file" />
+                                         onChange={(e) => setFile(e.target.files[0])} type="file" />
                                       </label>
                                     </li>
                                    

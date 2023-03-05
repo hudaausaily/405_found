@@ -62,7 +62,7 @@ return <div  key={index}>
                              <div className="col-lg-2 col-sm-3">
                                <div className="user-avatar">
                                  <figure>
-                                   <img src={require(`../image/${users.image}`)} alt="" />
+                                   <img  src={require(`../image/${users.image}`)} alt="" />
                                    <form className="edit-phto">
                                      <i className="fa fa-camera-retro" />
                                      <Link to={`/profile/editProfile/${users.id}/edit`} title data-ripple>Edit Profile</Link>

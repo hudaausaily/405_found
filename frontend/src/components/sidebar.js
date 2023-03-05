@@ -98,7 +98,7 @@ const Sidebar = () => {
                 return (
                   <li key={index}>
                     <figure>
-                      {element.group_image && <img
+                      {element.group_image && <img style={{height:'40px',width:'40px',borderRadius:'45%'}}
                         src={`../image/${element.group_image}`}
                         alt=""
                       />}
@@ -136,7 +136,7 @@ const Sidebar = () => {
                 return (
                   <li key={index}>
                     <figure>
-                      {element.group_image && <img
+                      {element.group_image && <img style={{height:'40px',width:'40px',borderRadius:'45%'}}
                         src={require(`../image/${element.group_image}`)}
                         alt=""
                       />}

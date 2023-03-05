@@ -8,7 +8,7 @@ const GroupRightBar = () => {
             <h4 className="widget-title">Group Admin</h4>	
             <div className="your-page">
               <figure>
-                <a href="#" ><img src="images/resources/friend-avatar9.jpg" alt="" /></a>
+                <a href="#" ><img style={{height:'40px',width:'40px',borderRadius:'45%'}} src="images/resources/friend-avatar9.jpg" alt="" /></a>
               </figure>
               <div className="page-meta">
                 <a href="#"  className="underline">Admin Name</a>
@@ -42,7 +42,7 @@ const GroupRightBar = () => {
             <ul id="people-list" className="friendz-list" style={{overflowY:'scroll'}}>
               <li>
                 <figure>
-                  <img src="images/resources/friend-avatar.jpg" alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src="images/resources/friend-avatar.jpg" alt="" />
                   <span className="status f-online" />
                 </figure>
                 <div className="friendz-meta">
@@ -52,7 +52,7 @@ const GroupRightBar = () => {
               </li>
               <li>
                 <figure>
-                  <img src="images/resources/friend-avatar2.jpg" alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src="images/resources/friend-avatar2.jpg" alt="" />
                   <span className="status f-away" />
                 </figure>
                 <div className="friendz-meta">
@@ -62,7 +62,7 @@ const GroupRightBar = () => {
               </li>
               <li>
                 <figure>
-                  <img src="images/resources/friend-avatar3.jpg" alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src="images/resources/friend-avatar3.jpg" alt="" />
                   <span className="status f-off" />
                 </figure>
                 <div className="friendz-meta">
@@ -82,7 +82,7 @@ const GroupRightBar = () => {
               </li>
               <li>
                 <figure>
-                  <img src="images/resources/friend-avatar5.jpg" alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src="images/resources/friend-avatar5.jpg" alt="" />
                   <span className="status f-online" />
                 </figure>
                 <div className="friendz-meta">
@@ -92,7 +92,7 @@ const GroupRightBar = () => {
               </li>
               <li>
                 <figure>
-                  <img src="images/resources/friend-avatar6.jpg" alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src="images/resources/friend-avatar6.jpg" alt="" />
                   <span className="status f-away" />
                 </figure>
                 <div className="friendz-meta">
@@ -102,7 +102,7 @@ const GroupRightBar = () => {
               </li>
               <li>
                 <figure>
-                  <img src="images/resources/friend-avatar7.jpg" alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src="images/resources/friend-avatar7.jpg" alt="" />
                   <span className="status f-off" />
                 </figure>
                 <div className="friendz-meta">
@@ -112,7 +112,7 @@ const GroupRightBar = () => {
               </li>
               <li>
                 <figure>
-                  <img src="images/resources/friend-avatar5.jpg" alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src="images/resources/friend-avatar5.jpg" alt="" />
                   <span className="status f-online" />
                 </figure>
                 <div className="friendz-meta">
@@ -122,7 +122,7 @@ const GroupRightBar = () => {
               </li>
               <li>
                 <figure>
-                  <img src="images/resources/friend-avatar2.jpg" alt="" />
+                  <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src="images/resources/friend-avatar2.jpg" alt="" />
                   <span className="status f-away" />
                 </figure>
                 <div className="friendz-meta">

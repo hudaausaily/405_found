@@ -69,8 +69,8 @@ const handlePost = (e) => {
                             <div className="newpst-input">
                             <form onSubmit={handleImagePost}>                                
                             <textarea id={current_ID} onChange={handlePost} rows={3} placeholder="write something" defaultValue={""} />
-                                <div className="attachments">
-                                  <ul>
+                                <div className="attachments" >
+                                  <ul >
                               
                                     <li>
                                       <i className="fa fa-image" />
@@ -79,14 +79,9 @@ const handlePost = (e) => {
                      onChange={(e) => setFile(e.target.files[0])}  type="file" />
                                       </label>
                                     </li>
-                                    <li>
-                                      <i className="fa fa-video-camera" />
-                                      <label className="fileContainer">
-                                        <input type="file" />
-                                      </label>
-                                    </li>
-                                    <li>
-                                      <button type="submit">Publish</button>
+                                    
+                                    <li style={{marginTop:'8px'}}>
+                                      <button type="submit" className='red'>Post</button>
                                     </li>
                                   </ul>
                                 </div>

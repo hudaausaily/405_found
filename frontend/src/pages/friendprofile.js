@@ -198,7 +198,7 @@ const removeFriend = (friendId) => {
       
 
       
-                          <div className="add-btn">
+                          <div className="add-btn" style={{marginBottom:'50px'}}>
                             
                             {(() => {
                             if (pendingRequest.includes(users.id) || Myfriends.includes(users.id) || requestFriend.includes(users.id)){
@@ -244,7 +244,7 @@ const removeFriend = (friendId) => {
                               <div className="col-lg-2 col-sm-3">
                                 <div className="user-avatar">
                                   <figure>
-                                    <img src={require(`../image/${users.image}`)} alt="" />
+                                    <img style={{minHeight:'300px',minWidth:'167px'}} src={require(`../image/${users.image}`)} alt="" />
                                   
                                   </figure>
                                 </div>
@@ -367,12 +367,14 @@ const removeFriend = (friendId) => {
                       </div>	
                     </section>
                      
-                      <Footer/>
                     </div>
-                    
+                    <Footer/>
+
                   </div>
+                  
                   )
                   })},
+
                   </div>
     );
 }

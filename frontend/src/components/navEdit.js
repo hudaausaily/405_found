@@ -59,7 +59,7 @@ const NavEdit = () => {
     return (
         <div className="topbar stick">
             <div className="logo">
-                <a  href="newsfeed.html"><img src="/images/tag2.png" alt="" style={{marginTop:'-10px'}}/></a>
+                <a  href="newsfeed.html"><img src="/images/tag2.png" alt="" style={{marginTop:'-20px'}}/></a>
             </div>
 
             <div className="top-area">

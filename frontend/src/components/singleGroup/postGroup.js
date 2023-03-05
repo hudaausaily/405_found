@@ -5,6 +5,9 @@ import axios from 'axios';
 import { useState , useEffect , useParams } from 'react'
 import { useNavigate } from "react-router-dom";
 import { BsFillCreditCard2BackFill } from 'react-icons/bs';
+import { FaCommentAlt } from 'react-icons/fa';
+import { FcLike } from 'react-icons/fc';
+import { FcLikePlaceholder } from 'react-icons/fc';
 
 
 
@@ -268,7 +271,7 @@ const canclePostEdit = (id) => {
         <div className="user-post">
           <div className="friend-info">
             <figure>
-              {/* <img  src={require(`../../image/${props.post.image}`)} alt="" /> */}
+               {<img  src={require(`../../image/${props.post.image}`)} alt="" />} 
             </figure>
             <div className="friend-name">
               <ins>{props.post.name}</ins> 
@@ -285,6 +288,12 @@ const canclePostEdit = (id) => {
             
        <div className="post-meta">
 
+       <div className="description">
+       <p className='sideLink' style={{fontSize:'20px'}}>
+         {props.post.content}
+       </p>
+     </div>
+
               {/* <img src={require(`../../image/${props.post.post_image}`)}  alt="" /> */}
               <div className="we-video-info">
                 <ul>
@@ -299,7 +308,7 @@ const canclePostEdit = (id) => {
 
                   <li>
                     <span onClick={() =>ShowComments(props.post.post_id)} className="comment" data-toggle="tooltip" title="Comments">
-                      <i className="fa fa-comments-o" />
+                      <FaCommentAlt style={{ fontSize: '16px', color: 'white', marginLeft: '10px' }} />
                     </span>
                   </li>
 
@@ -321,11 +330,11 @@ const canclePostEdit = (id) => {
                         return ( flagLike = true )
                       }})}
               {( flagLike == true ) ?
-              <form action="" onSubmit={removeLikePost}>
+              <form action="" onSubmit={removeLikePost} style={{ display: 'inline' }}>
 
                   <li>
                     <button style={{background : 'none' , border : 'none' , color : '#0d6efd' , textDecoration : 'underLine' }} type='submit'  onClick={()=>handleLikePost(props.post.post_id)} className="dislike" data-toggle="tooltip" title="dislike">
-                      <i className="ti-heart-broken"  />
+                      <FcLike style={{ fontSize: '20px' }}/>
                       <ins>{like_count}</ins>
                     </button>
                   </li>
@@ -335,11 +344,11 @@ const canclePostEdit = (id) => {
                   :
 
 
-                  <form action="" onSubmit={likePost}>
+                  <form action="" onSubmit={likePost} style={{ display: 'inline' }}>
 
                   <li>
                     <button style={{background : 'none' , border : 'none' , color : '#0d6efd' , textDecoration : 'underLine' }} type='submit' onClick={()=>handleLikePost(props.post.post_id)}  className="like" data-toggle="tooltip" title="like">
-                      <i className="ti-heart" />
+                      <FcLikePlaceholder style={{ fontSize: '20px' }} />
                       <ins>{like_count}</ins>
                     </button>
                   </li>
@@ -353,11 +362,7 @@ const canclePostEdit = (id) => {
 
                 </ul>
               </div>
-              <div className="description">
-                <p>
-                  {props.post.content}
-                </p>
-              </div>
+              
             </div>
               {/* ___________like_______________ */}
           </div>
@@ -417,7 +422,7 @@ const canclePostEdit = (id) => {
                       <i className="em em-stuck_out_tongue" />
                     </div> */}
                     <button type="submit" style={{color:'red'}}>
-                      send
+                      post
                     </button>
                   </form>	
                 </div>

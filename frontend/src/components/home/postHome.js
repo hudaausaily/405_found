@@ -246,7 +246,7 @@ const PostHome = (props) => {
       <div className="user-post">
         <div className="friend-info">
           <figure>
-            <img src={require(`../../image/${props.post.image}`)} alt="" />
+            <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${props.post.image}`)} alt="" />
           </figure>
           <div className="friend-name">
           <ins>  <Link to={`/Friendprofile/${props.post.user_id} `}> 
@@ -266,7 +266,7 @@ const PostHome = (props) => {
 
           <div className="post-meta">
 
-            <img src={require(`../../image/${props.post.post_image}`)} alt="" />
+            <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${props.post.post_image}`)} alt="" />
             <div className="we-video-info">
               <ul>
                 {/* <li>
@@ -312,7 +312,7 @@ const PostHome = (props) => {
                   <form action="" onSubmit={likePost} style={{ display: 'inline' }}>
 
                     <li>
-                      <button style={{ background: 'none', border: 'none', color: '#0d6efd', textDecoration: 'underLine' }} type='submit' onClick={() => handleLikePost(props.post.post_id)} className="like" data-toggle="tooltip" title="like">
+                      <button style={{ background: 'none', border: 'none', color: '#0d6efd', textDecoration: 'none' }} type='submit' onClick={() => handleLikePost(props.post.post_id)} className="like" data-toggle="tooltip" title="like">
                         <FcLikePlaceholder style={{ fontSize: '20px' }} />
                         <ins>{like_count}</ins>
                       </button>
@@ -346,7 +346,7 @@ const PostHome = (props) => {
                 return (
                   <li key={index}>
                     <div className="comet-avatar">
-                      <img src={require(`../../image/${comment.image}`)} alt="" />
+                      <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${comment.image}`)} alt="" />
                     </div>
                     <div className="we-comment">
                       <div className="coment-head">
@@ -371,14 +371,14 @@ const PostHome = (props) => {
             {/* INPUT COMMENT*/}
             <li className="post-comment">
               <div className="comet-avatar">
-                <img src={require(`../../image/${ImageUser}`)} alt="" />
+                <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../../image/${ImageUser}`)} alt="" />
               </div>
               <div className="post-comt-box">
                 <form method="post" onSubmit={handleCreateComment}>
                   <textarea placeholder="Post your comment" defaultValue={""} id={props.post.post_id} name={current_ID} onChange={handleChange} />
 
                   <button type="submit" style={{ color: 'red' }}>
-                    send
+                    post
                   </button>
                 </form>
               </div>

@@ -59,7 +59,7 @@ const Nav = () => {
     return (
         <div className="topbar stick">
             <div className="logo">
-                <a  href="newsfeed.html"><img src="/images/tag2.png" alt="" style={{marginTop:'-10px'}}/></a>
+                <a  href="newsfeed.html"><img style={{height:'40px',width:'40px',borderRadius:'45%',marginTop:'-20px'}} src="/images/tag2.png" alt="" /></a>
             </div>
 
             <div className="top-area">

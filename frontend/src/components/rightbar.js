@@ -115,7 +115,7 @@ function getUsers(){
 
                                     <li key={index}>
                                       <figure>
-                                        <img src={require(`../image/${ele.image}`)} alt="" />
+                                        <img style={{height:'40px',width:'40px',borderRadius:'45%'}} src={require(`../image/${ele.image}`)} alt="" />
                                         <span className="status f-online" />
                                       </figure>
                                       <div className="friendz-meta">

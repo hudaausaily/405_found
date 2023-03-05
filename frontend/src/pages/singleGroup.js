@@ -238,8 +238,8 @@ let flag = false;
           <section>
             <div className="feature-photo">
               <figure><img style={{maxHeight: '70vh'}}  src='https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80' alt="aa" /></figure>
-              <div className="add-btn">
-                <span>1.3k followers</span>
+              <div className="add-btn" style={{bottom:'70px'}}>
+                
                 {(() => {
               if (!(groups.user_id == current_ID)){
                             if (pendingMembers.includes(groups.group_id) || acceptedMembers.includes(groups.group_id) ){
@@ -284,43 +284,25 @@ let flag = false;
 
 
               </div>
-              <form className="edit-phto">
-                <i className="fa fa-camera-retro" />
-                <label className="fileContainer">
-                  Edit Cover Photo
-                  <input type="file" />
-                </label>
-              </form>
+             
               <div className="container-fluid" style={{backgroundColor:'#212529'}} >
                 <div className="row merged">
                   <div className="col-lg-2 col-sm-3">
                     <div className="user-avatar">
                       <figure>
-                        <img src={groups && groups.group_image ?require(`../image/${groups.group_image}`) : "https://www.example.com/example.png"} alt="" />
-                        <form className="edit-phto">
-                          <i className="fa fa-camera-retro" />
-                          <label className="fileContainer">
-                            Edit Display Photo
-                            <input type="file" />
-                          </label>
-                        </form>
+                        <img style={{minHeight:'300px',minWidth:'167px'}} src={groups && groups.group_image ?require(`../image/${groups.group_image}`) : "https://www.example.com/example.png"} alt="" />
+                        
                       </figure>
                     </div>
                   </div>
                   <div className="col-lg-10 col-sm-9">
-                    <div className="timeline-info">
-                      <ul>
+                    <div className="timeline-info" style={{background:'none'}}>
+                      <ul style={{backgroundColor:'brown', borderRadius:'0 20px 20px 0'}}>
                         <li className="admin-name">
-                          <h5>{groups.group_name}</h5>
-                          <span>@{groups.group_name}</span>
+                          <h5 style={{color:'white'}}>{groups.group_name}</h5>
+                          <span style={{fontSize:'12px',color:'gray'}} >@{groups.group_name}</span>
                         </li>
-                        <li>
-                          <a className="active" href="fav-page.html" title data-ripple>Page</a>
-                          <a className href="inbox.html" title data-ripple>inbox</a>
-                          <a className href="insights.html" title data-ripple>insights</a>
-                          <a className href="fav-page.html" title data-ripple>posts</a>
-                          <a className href="page-likers.html" title data-ripple>likers</a>
-                        </li>
+                        
                       </ul>
                     </div>
                   </div>
@@ -364,9 +346,9 @@ let flag = false;
           {/* page like widget */}
           <div className="widget">
             <div className="banner medium-opacity bluesh">
-              <div className="bg-image" style={{backgroundImage: 'url(images/resources/baner-widgetbg.jpg)'}} />
+              <div className="bg-image" style={{backgroundImage: 'url(/images/tag2.png)'}} />
               <div className="baner-top">
-                <span><img alt="" src="images/book-icon.png" /></span>
+                <span><img alt="" src="../images/book-icon.png" /></span>
                 <i className="fa fa-ellipsis-h" />
               </div>
 
@@ -375,9 +357,7 @@ let flag = false;
 
               <div className="banermeta">
                 <p>
-                  create your own favourite page.
-                </p>
-                <span>like them all</span>
+JOIN 405 FOUND                </p>
                 <a data-ripple title href="#">start now!</a>
               </div>
   
@@ -405,8 +385,8 @@ let flag = false;
                 </figure>
                 <div className="friendz-meta">
                   <a href="time-line.html">{element.name}</a>
-                  <button  onClick={() => {acceptRequest(element.user_id)}}>accept</button>
-                  <button  onClick={() => {deleteRequest(element.user_id)}}>delete</button>
+                  <button className='red' onClick={() => {acceptRequest(element.user_id)}}>accept</button>
+                  <button className='red' onClick={() => {deleteRequest(element.user_id)}}>delete</button>
                 </div>
               </li>
 
@@ -433,10 +413,10 @@ let flag = false;
                   <span className="status f-online" />
                 </figure>
                 <div className="friendz-meta">
-                  <Link to={`/Friendprofile/${element.id}`}>{element.name}</Link>
+                  <Link className='sideLink' to={`/Friendprofile/${element.id}`}>{element.name}</Link>
 
                   { groups.user_id === current_ID ?
-                  <button onClick={() => {deleteFromGroup(element.user_id)}}>Delete</button>
+                  <button  style={{marginLeft:'5px',marginTop:'3px',backgroundColor:'white'}} onClick={() => {deleteFromGroup(element.user_id)}}>Delete</button>
                   : "" }
                 </div>
               </li>
